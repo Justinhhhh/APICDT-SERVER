@@ -1,5 +1,8 @@
 # APICDT
 
-Use node version 16 by running `nvm use 16`
+Use node version 16 to run the code: `nvm use 16`
 
-`npm run dev` to start development
+Run the following code everytime you want to edit the code:<br/>
+1. `git pull`<br/>
+2. `npm install`<br/>
+3. `npm run dev`
