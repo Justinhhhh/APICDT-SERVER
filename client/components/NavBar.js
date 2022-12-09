@@ -1,21 +1,36 @@
+import {
+  Flex,
+  Button,
+  Heading
+} from '@chakra-ui/react'
+
+import NextLink from 'next/link'
 
 function NavBar(){
-    return (<header>
-        <div>亚太辩论</div>
-        <nav>
-            <ul>
-                <li>
-                    <>主页</>
-                </li>
-                <li>
-                    <>对阵表</>
-                </li>
-                <li>
-                    <>评审</>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    );
+    return(
+    <Flex position="fixed">
+    <Heading fontSize='20px' padding={9}>亚太辩</Heading>
+    <Flex position="fixed" top="1rem" right="1rem" align="center">
+    <NextLink href="/" passHref>
+      <Button as="a" variant="ghost" aria-label="Home" my={5} w="100%">
+        Home
+      </Button>
+    </NextLink>
+
+    <NextLink href="/about" passHref>
+      <Button as="a" variant="ghost" aria-label="About" my={5} w="100%">
+        About
+      </Button>
+    </NextLink>
+
+    <NextLink href="/contact" passHref>
+      <Button as="a" variant="ghost" aria-label="Contact" my={5} w="100%">
+        Contact
+      </Button>
+    </NextLink>
+    </Flex>
+    </Flex>
+    )
 }
+
 export default NavBar;
