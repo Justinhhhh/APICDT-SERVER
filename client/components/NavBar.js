@@ -1,34 +1,39 @@
 import {
   Flex,
-  Button,
-  Heading
+  Box,
 } from '@chakra-ui/react'
-
-import NextLink from 'next/link'
+import "@fontsource/ma-shan-zheng"
+import Link from 'next/link'
 
 function NavBar(){
-    return(
-    <Flex position="fixed">
-    <Heading fontSize='20px' padding={9}>亚太辩</Heading>
-    <Flex position="fixed" top="1rem" right="1rem" align="center">
-    <NextLink href="/" passHref>
-      <Button  variant="ghost" aria-label="Contact" my={5} w="100%">
-        Home
-      </Button>
-    </NextLink>
+  return (
+    <Flex bgColor='purple.400' color='black' justify='space-between' h={'8vh'} alignItems='center' fontFamily={'Ma Shan Zheng'} fontWeight={500}>
+      <Flex pl={5} fontSize='24px' align='center'>
+      <Link href="/" passHref>
+        亚太辩论
+    </Link>
+      </Flex>
+      <Flex align={'center'} justify='space-between' h='100%' pr={5} w='28%' fontSize={'18px'}>
+    <Link href="/" passHref>
+        <Box _hover={{color: 'white'}}>主页</Box>
+        </Link>
+        
+        <Link href="/topic" passHref>
+      <Box _hover={{color: 'white'}}>辩题</Box>
+        </Link>
 
-    <NextLink href="/about" passHref>
-      <Button variant="ghost" aria-label="Contact" my={5} w="100%">
-        About
-      </Button>
-    </NextLink>
+    <Link href="/registration" passHref>
+      <Box _hover={{color: 'white'}}>选手报名</Box>
+        </Link>
+        
+        <Link href="/login" passHref>
+      <Box _hover={{color: 'white'}}>登记</Box>
+    </Link>
 
-    <NextLink href="/contact" passHref>
-      <Button variant="ghost" aria-label="Contact" my={5} w="100%">
-        Contact
-      </Button>
-    </NextLink>
-    </Flex>
+    <Link href="/about" passHref>
+    <Box _hover={{color: 'white'}}>关于我们</Box>
+        </Link>
+      </Flex>
     </Flex>
     )
 }
