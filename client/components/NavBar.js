@@ -12,19 +12,19 @@ function NavBar(){
     <Heading fontSize='20px' padding={9}>亚太辩</Heading>
     <Flex position="fixed" top="1rem" right="1rem" align="center">
     <NextLink href="/" passHref>
-      <Button as="a" variant="ghost" aria-label="Home" my={5} w="100%">
+      <Button  variant="ghost" aria-label="Contact" my={5} w="100%">
         Home
       </Button>
     </NextLink>
 
     <NextLink href="/about" passHref>
-      <Button as="a" variant="ghost" aria-label="About" my={5} w="100%">
+      <Button variant="ghost" aria-label="Contact" my={5} w="100%">
         About
       </Button>
     </NextLink>
 
     <NextLink href="/contact" passHref>
-      <Button as="a" variant="ghost" aria-label="Contact" my={5} w="100%">
+      <Button variant="ghost" aria-label="Contact" my={5} w="100%">
         Contact
       </Button>
     </NextLink>
