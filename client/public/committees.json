@@ -1,0 +1,15 @@
+{
+    "committees": [{
+        "name": "Amos Chong",
+        "description": "The most outstanding student in school"
+    }, {
+        "name": "Low Low",
+        "description": "The best student in school"
+    }, {
+        "name": "Chong Chong",
+        "description": "The worst hacker in school"
+    }, {
+        "name": "Amos Amos",
+        "description": "The best hacker in school"
+    }]
+}

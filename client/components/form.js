@@ -15,7 +15,7 @@ import "@fontsource/inder";
 function Form({ information }) {
     const { Countries } = country
     return (
-        <Box bgColor='#e4c5ed' pl={100} pb={100} fontFamily={"Inder"}>
+        <Box bgColor='#e4c5ed' h='92vh' pt={100} pl={100} fontFamily={"Inder"}>
             <Heading fontSize='48px' fontFamily={"Inder"}>Participants Registration</Heading>
             <FormControl>
                 <Flex flexDirection='row' mt='59px' mb='29px' fontWeight={'500px'}>

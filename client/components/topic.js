@@ -17,7 +17,7 @@ import "@fontsource/ma-shan-zheng"
 function Topic() {
     const { topics } = topic
     return ( 
-        <Box fontFamily={"Ma Shan Zheng"} mb={20} ml={20}>
+        <Box fontFamily={"Ma Shan Zheng"} mt={20} mb={20} ml={20}>
             <Text mb={30} fontSize={48}>辩题列表</Text>
         <TableContainer width={'60vw'} borderColor='purple'>
             <Table variant='striped' colorScheme='purple' borderColor={'purple'}>
