@@ -21,7 +21,7 @@ export default function Home() {
 
       <main>
           <Header image={logo} font={MaShanZheng} title="第十一届亚太辩论比赛"/>
-          <Timelines />
+          <Timelines bgColor= "yellow"/>
       </main>
     </div>
   )
