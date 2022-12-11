@@ -9,7 +9,8 @@ function CommitteeCard({ name, description }) {
         // <Card maxW='sm' ml={100} pb={20} mb={20} mt={20} fontFamily={"Inder"}>
         <Card maxW='sm' fontFamily={"Inder"} mt={10} mb={10} h={'50vh'}>
         <CardBody>
-            <Image
+                <Image
+            alt={name}
             src={individualPic}
             borderRadius='lg'
             />

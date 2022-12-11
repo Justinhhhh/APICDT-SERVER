@@ -33,7 +33,7 @@ function Topic() {
                             <Tr>{
                                 topic.map(t => {
                                     return (
-                                        <Td>{t}</Td>
+                                        <Td key={t.id}>{t}</Td>
                                     )
                                 })}
                         </Tr>)

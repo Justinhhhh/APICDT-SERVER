@@ -19,7 +19,8 @@ export default function Timelines(){
                 contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
                 date= {event.date}
                 iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                icon={< HiAcademicCap/>}
+                icon={< HiAcademicCap />}
+                key={event.id}
                 >
                 <h3 className="vertical-timeline-element-title">{event.event}</h3>
                 <p>
