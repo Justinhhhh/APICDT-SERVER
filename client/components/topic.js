@@ -30,7 +30,7 @@ function Topic() {
                     {topics.map(topicS => {
                         const { topic } = topicS
                         return (
-                            <Tr>{
+                            <Tr key={topicS.id}>{
                                 topic.map(t => {
                                     return (
                                         <Td key={t.id}>{t}</Td>

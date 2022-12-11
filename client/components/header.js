@@ -5,7 +5,7 @@ function Header({ image, font, title }) {
     return (
         <div className={`${font.className} ${styles.container}`}>
             <div className={styles.header}>
-                <Image src={image} width={200}></Image>
+                <Image alt={title} src={image} width={200}></Image>
                 <div>{title}</div>
             </div>
         </div>
