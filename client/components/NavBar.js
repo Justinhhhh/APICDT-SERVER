@@ -13,7 +13,7 @@ function NavBar(){
         亚太辩论
     </Link>
       </Flex>
-      <Flex align={'center'} justify='space-between' h='100%' pr={5} w='28%' fontSize={'18px'}>
+      <Flex align={'center'} justify='space-between' h='100%' pr={5} w='35%' fontSize={'18px'}>
     <Link href="/" passHref>
         <Box _hover={{color: 'white'}}>主页</Box>
         </Link>
@@ -33,8 +33,13 @@ function NavBar(){
     <Link href="/about" passHref>
     <Box _hover={{color: 'white'}}>关于我们</Box>
         </Link>
+
+        <Link href="/matches" passHref>
+<Box _hover={{color: 'white'}}>比赛信息</Box>
+    </Link>
       </Flex>
     </Flex>
+    
     )
 }
 

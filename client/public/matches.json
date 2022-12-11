@@ -1,0 +1,15 @@
+{
+    "matches": [{
+        "matchNo": "Match #1",
+        "teamA": "NTU",
+        "teamB": "NUS",
+        "date": "3 July 2022",
+        "time": "3:00pm"
+    }, {
+        "matchNo": "Match #2",
+        "teamA": "Wild chicken university",
+        "teamB": "Harvard university",
+        "date": "4 July 2022",
+        "time": "2:00pm"
+    }]
+}
