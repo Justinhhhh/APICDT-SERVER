@@ -10,6 +10,7 @@ import {
 } from '@chakra-ui/react'
 import country from '../public/country.json'
 import "@fontsource/inder";
+import "@fontsource/ma-shan-zheng"
 
 
 function Form({ information }) {
