@@ -11,31 +11,35 @@ function NavBar(){
       <Flex pl={5} fontSize='24px' align='center'>
       <Link href="/" passHref>
         亚太辩论
-    </Link>
+      </Link>
       </Flex>
-      <Flex align={'center'} justify='space-between' h='100%' pr={5} w='35%' fontSize={'18px'}>
-    <Link href="/" passHref>
-        <Box _hover={{color: 'white'}}>主页</Box>
+      <Flex align={'center'} justify='space-between' h='100%' pr={5} fontSize={'18px'}>
+      <Link href="/" passHref>
+          <Flex ml={5} _hover={{color: 'white'}}>主页</Flex>
         </Link>
         
         <Link href="/topic" passHref>
-      <Box _hover={{color: 'white'}}>辩题</Box>
+          <Flex ml={5} _hover={{color: 'white'}}>辩题</Flex>
         </Link>
 
     <Link href="/registration" passHref>
-      <Box _hover={{color: 'white'}}>选手报名</Box>
+      <Flex ml={5} _hover={{color: 'white'}}>选手报名</Flex>
         </Link>
         
         <Link href="/login" passHref>
-      <Box _hover={{color: 'white'}}>登记</Box>
+      <Flex ml={5} _hover={{color: 'white'}}>登录</Flex>
     </Link>
 
     <Link href="/about" passHref>
-    <Box _hover={{color: 'white'}}>关于我们</Box>
+    <Flex ml={5} _hover={{color: 'white'}}>关于我们</Flex>
         </Link>
 
         <Link href="/matches" passHref>
-<Box _hover={{color: 'white'}}>比赛信息</Box>
+        <Flex ml={5} _hover={{color: 'white'}}>比赛信息</Flex>
+        </Link>
+        
+        <Link href="/starwars" passHref>
+    <Flex ml={5} _hover={{color: 'white'}}>抽签</Flex>
     </Link>
       </Flex>
     </Flex>

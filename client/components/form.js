@@ -16,33 +16,32 @@ import "@fontsource/ma-shan-zheng"
 function Form({ information }) {
     const { Countries } = country
     return (
-        <Box bgColor='#e4c5ed' h='92vh' pt={100} pl={100} fontFamily={"Inder"}>
-            <Heading fontSize='48px' fontFamily={"Inder"}>Participants Registration</Heading>
+        <Box bgColor='#e4c5ed' h='92vh' pt={100} pl={100} fontFamily={"Ma Shan Zheng"}>
+            <Heading fontSize='48px' fontFamily={"Ma Shan Zheng"}>报名</Heading>
             <FormControl>
                 <Flex flexDirection='row' mt='59px' mb='29px' fontWeight={'500px'}>
                     <Flex flexDirection='column' mr='54px'>
-                    <FormLabel>{`${information[0]} *`}</FormLabel>
-                    <Input focusBorderColor='Purple' borderColor={'Black'} w='320px'  placeholder='Your Name' type='text' required/>
+                    <FormLabel>学校资料</FormLabel>
+                    <Input focusBorderColor='Purple' borderColor={'Black'} w='320px'  placeholder='学校名称' type='text' required/>
                     </Flex>
                     <Flex flexDirection='column'>
-                    <FormLabel>{`${information[1]} *`}</FormLabel>
-                    <Input focusBorderColor='Purple' borderColor={'Black'} w='320px' placeholder='eg. 1234@example.edu.sg' type='email' required/>
+                    <FormLabel>队长资料</FormLabel>
+                    <Input focusBorderColor='Purple' borderColor={'Black'} w='320px' placeholder='队长名称' type='text' required/>
                     </Flex>
                 </Flex>
                 <Flex flexDirection='row' mt='10px' mb='29px' fontWeight={'500px'}>
                     <Flex flexDirection='column' mr='54px'>
-                        <FormLabel>{`${information[2]} *`}</FormLabel>
-                        <Input focusBorderColor='Purple' borderColor={'Black'} w='320px' placeholder='Your school' type='text' required />
+                        <Input focusBorderColor='Purple' borderColor={'Black'} w='320px' placeholder='队长电子邮件' type='email' required />
                     </Flex>
-                    <Flex flexDirection='column' mr='54px'>
-                    <FormLabel>{`${information[3]} *`}</FormLabel>
-                    <Select borderColor={'Black'} w='320px' placeholder='Select country'>
+                    <Flex mr='54px'>
+                    <Select borderColor={'Black'} w='150px' placeholder='国际电话区号'>
                         {Countries.map(country => {
                             return (
                                 <option key={country.id}>{country}</option>
                                 )
                             })}
-                    </Select>
+                        </Select>
+                        <Input ml={5} focusBorderColor='Purple' borderColor={'Black'} w='320px' placeholder='队长联络电话' type='text' required />
                     </Flex>
                 </Flex>
             </FormControl>

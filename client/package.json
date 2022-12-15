@@ -13,8 +13,10 @@
     "@chakra-ui/react": "^2.4.3",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@fontsource/albert-sans": "^4.5.1",
     "@fontsource/inder": "^4.5.11",
     "@fontsource/ma-shan-zheng": "^4.5.11",
+    "@fontsource/montserrat": "^4.5.13",
     "@next/font": "^13.0.6",
     "eslint": "8.29.0",
     "eslint-config-next": "13.0.6",
@@ -24,5 +26,8 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
     "react-vertical-timeline-component": "^3.6.0"
+  },
+  "devDependencies": {
+    "react-time-format": "^0.0.5"
   }
 }
