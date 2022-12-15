@@ -15,25 +15,26 @@ export default function Footer() {
   return (
     <Container as="footer" role="contentinfo">
     <Stack
-      spacing="8"
+      spacing="12"
       direction={{ base: 'column', md: 'row' }}
       justify="space-between"
       py={{ base: '12', md: '16' }}
     >
     <Stack
         direction={{ base: 'column-reverse', md: 'column', lg: 'row' }}
-        spacing={{ base: '12', md: '8' }}
+        spacing={{ base: '16', md: '16' }}
       >
-        <Stack direction="column" spacing="20">
-          <Stack spacing="2" minW="36" flex="1">
+        <Stack direction="row" spacing="30">
+          <Stack spacing="2" minW="32" flex="1">
           <Text mb={30} fontSize={36} fontFamily={"Ma Shan Zheng"}>联系方式</Text>
             <Stack spacing="2" shouldWrapChildren>
             <Text fontSize={20} fontFamily={"Ma Shan Zheng"}>何佳萱：+65 83148709</Text>
+            <Text fontSize={20} fontFamily={"Ma Shan Zheng"}>何佳萱：邮箱1234556@gmail.com</Text>
             <Text fontSize={20} fontFamily={"Ma Shan Zheng"}>何智圆：+65 86500369</Text>
             <Text fontSize={20} fontFamily={"Ma Shan Zheng"}>沈佳欣：+65 91087660</Text>
             </Stack>
           </Stack>
-          <Stack spacing="2" minW="36" flex="1">
+          <Stack spacing="2" minW="32" flex="1">
           <Text mb={30} fontSize={36} fontFamily={"Ma Shan Zheng"}>合作伙伴 Title Partner</Text>
             <Stack spacing="2" shouldWrapChildren>
               <Button variant="link">Bilibili</Button>
