@@ -4,8 +4,10 @@ import {
 } from '@chakra-ui/react'
 import "@fontsource/ma-shan-zheng"
 import Link from 'next/link'
+import { useState } from 'react'
 
-function NavBar(){
+function NavBar() {
+  const [ drawn, setDrawn ] = useState(true)
   return (
     <Flex bgColor='purple.400' color='black' justify='space-between' h={'8vh'} alignItems='center' fontFamily={'Ma Shan Zheng'} fontWeight={500}>
       <Flex pl={5} fontSize='24px' align='center'>
@@ -38,9 +40,13 @@ function NavBar(){
         <Flex ml={5} _hover={{color: 'white'}}>比赛信息</Flex>
         </Link>
         
-        <Link href="/starwars" passHref>
+        {drawn
+          ? <Link href="/drawnResults" passHref>
+          <Flex ml={5} _hover={{color: 'white'}}>抽签结果</Flex>
+          </Link>
+          : <Link href="/starwars" passHref>
     <Flex ml={5} _hover={{color: 'white'}}>抽签</Flex>
-    </Link>
+    </Link>}
       </Flex>
     </Flex>
     

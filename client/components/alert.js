@@ -8,12 +8,13 @@ import {
     Center
   } from '@chakra-ui/react'
 
-function AlertDialog({ status }) {
+function AlertDialog({ status, description }) {
     return (
         <Flex justifyContent={'center'}>
             <Alert status={status} w={'50vw'}>
                 <AlertIcon />
                 <AlertTitle>{status}</AlertTitle>
+                <AlertDescription>{description}</AlertDescription>
             </Alert>
         </Flex>
     )
