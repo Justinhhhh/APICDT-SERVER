@@ -11,11 +11,10 @@ import {
     Box,
     Text
 } from '@chakra-ui/react'
-import topic from "../public/topics.json"
 import "@fontsource/ma-shan-zheng"
 
-function Topic() {
-    const { topics } = topic
+function Topic({ topics }) {
+    // const { topics } = topic
     return ( 
         <Box fontFamily={"Ma Shan Zheng"} mt={20} mb={20} ml={20}>
             <Text mb={30} fontSize={48}>辩题列表</Text>
@@ -28,14 +27,11 @@ function Topic() {
                 </Thead>
                 <Tbody borderColor={'purple'}>
                     {topics.map(topicS => {
-                        const { topic } = topicS
+                        const { attributes } = topicS
                         return (
-                            <Tr key={topicS.id}>{
-                                topic.map(t => {
-                                    return (
-                                        <Td key={t.id}>{t}</Td>
-                                    )
-                                })}
+                            <Tr>
+                                <Td>{attributes.aTopic}</Td>
+                                <Td>{attributes.bTopic}</Td>
                         </Tr>)
                     })}
                 </Tbody>

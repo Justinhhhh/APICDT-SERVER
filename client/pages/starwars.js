@@ -13,26 +13,38 @@ function Starwars() {
     const [duration, setDuration] = useState()
     const router = useRouter()
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
         const endTime = date.getTime()
         const startTime = new Date('2022-12-15T16:00:00')
         const duration = new Date(endTime - startTime.getTime())
         setDuration(duration / 1000)
         setSubmitted(true)
         setShowAlert(true)
+        setTimeout(() => {
+            setShowAlert(false)
+            router.push('/drawnResults')
+        }, 5000)
+
+        try {
+            const response = await fetch(`api/drawn-results`, {
+                method: 'POST',
+            })
+            const res = await response.json()
+            const { data } = res
+        }
+        catch (e) {
+            console.log(e)
+        }
+
     }
 
     useEffect(() => {
         const timerForTime = setInterval(() => setDate(new Date()), 1000)
-
-        const timerForAlert = setTimeout(() => {
-            setShowAlert(false)
-            router.push('/drawnResults')
-        }, 5000)
         
         return () => {
             clearInterval(timerForTime)
-            clearTimeout(timerForAlert)
         }
     }, [])
 

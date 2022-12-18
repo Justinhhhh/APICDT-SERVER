@@ -1,12 +1,16 @@
 import { Flex, Heading, ListItem, OrderedList } from '@chakra-ui/react'
 import '@fontsource/ma-shan-zheng'
 import useSWR from 'swr'
-import drawnResult from '../public/drawnResults.json'
+
+const fetcher = async () => {
+    const response = await fetch("/api/drawn-results")
+    const res = await response.json()
+    const { data } = res
+    return data
+}
 
 function DrawnResults() {
-    const { data, error } = useSWR('drawnResults', async () => {
-        return drawnResult
-    })
+    const { data, error } = useSWR('drawnResults', fetcher)
 
     if (!data) 
         return <></>
@@ -14,10 +18,11 @@ function DrawnResults() {
     return ( 
         <Flex fontFamily={'Ma Shan Zheng'} mt={10} ml={10} h='92vh' flexDirection={'column'}>
             <Heading fontFamily={'Ma Shan Zheng'} mb={5}>抽签结果</Heading>
-            <OrderedList>{data.results.map((result) => {
+            <OrderedList>{data.map((result) => {
+                const { attributes } = result
                 return (
-                    <ListItem fontSize={20} key={data.results.id}>
-                        {result.school}: {result.time}
+                    <ListItem fontSize={20} key={data.id}>
+                        {`${attributes.schoolName} :   ${attributes.timeUsed}秒`}
                     </ListItem>
                 )
             })}</OrderedList>
