@@ -46,7 +46,11 @@ function NavBar() {
           </Link>
           : <Link href="/starwars" passHref>
     <Flex ml={5} _hover={{color: 'white'}}>抽签</Flex>
-    </Link>}
+          </Link>}
+        
+          <Link href="/starwars" passHref>
+    <Flex ml={5} _hover={{color: 'white'}}>抽签</Flex>
+    </Link>
       </Flex>
     </Flex>
     
