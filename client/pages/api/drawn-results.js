@@ -14,8 +14,9 @@ export default async function handler(req, res) {
             method: 'POST',
             body: JSON.stringify({
                 data: {
-                    schoolName: '马来亚大学',
-                    timeUsed: 13.56
+                    area: req.body.area,
+                    schoolName: req.body.schoolName,
+                    timeUsed: req.body.timeUsed
                 }
             }),
             headers: {
