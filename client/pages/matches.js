@@ -9,7 +9,7 @@ function Matches({ matches }) {
 
 export default Matches;
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context) {
     const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}matches`, {
         method: 'GET',
         headers: {
