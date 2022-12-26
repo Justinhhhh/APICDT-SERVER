@@ -17,6 +17,9 @@
     },
     "timeUsed": {
       "type": "float"
+    },
+    "area": {
+      "type": "string"
     }
   }
 }
