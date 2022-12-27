@@ -10,11 +10,6 @@ import countries from '../public/country.json'
 
 function Starwars() {
     const { data: session } = useSession()
-    if (!session) 
-        return (
-            <h1>Loading...</h1>
-        )
-    const email = session.user.email
     const { Countries } = countries
 
     const [date, setDate] = useState(new Date())
@@ -23,6 +18,20 @@ function Starwars() {
     const [showFailAlert, setShowFailAlert] = useState(false)
     const [area, setArea] = useState()
     const router = useRouter()
+
+    useEffect(() => {
+        const timerForTime = setInterval(() => setDate(new Date()), 1000)
+        
+        return () => {
+            clearInterval(timerForTime)
+        }
+    }, [])
+
+    if (!session) 
+        return (
+            <h1>Loading...</h1>
+        )
+    const email = session.user.email
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -77,14 +86,6 @@ function Starwars() {
         }
 
     }
-
-    useEffect(() => {
-        const timerForTime = setInterval(() => setDate(new Date()), 1000)
-        
-        return () => {
-            clearInterval(timerForTime)
-        }
-    }, [])
 
     if (session === null) {
         router.push('/login')

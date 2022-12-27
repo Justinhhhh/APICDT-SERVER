@@ -23,7 +23,7 @@ function DrawnResults() {
         <Grid templateColumns={'repeat(2, 1fr)'}>
     {Countries.map((country) => {
         return (
-            <GridItem><DrawnResultsArea data={data} area={country}/></GridItem>
+            <GridItem key={country.id}><DrawnResultsArea data={data} area={country}/></GridItem>
         )
     })}
             </Grid>

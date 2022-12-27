@@ -6,7 +6,7 @@ function Committees({ committees }) {
         <Grid templateColumns='repeat(3, 1fr)' ml={6}>
             {committees.map(committee => {
             return (
-                <CommitteeCard name={committee.attributes.name} description={committee.attributes.description}/>
+                <CommitteeCard key={committee.id} name={committee.attributes.name} description={committee.attributes.description}/>
             )
         })}
         </Grid>
