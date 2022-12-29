@@ -2,7 +2,7 @@ import {
   Flex,
   Box,
 } from '@chakra-ui/react'
-import "@fontsource/ma-shan-zheng"
+import "@fontsource/zcool-qingke-huangyou"
 import Link from 'next/link'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
@@ -39,16 +39,16 @@ function NavBar() {
   }
 
   return (
-    <Flex bgColor='purple.400' color='black' justify='space-between' h={'8vh'} alignItems='center' fontFamily={'Ma Shan Zheng'} fontWeight={500}>
+    <Flex bgColor='#2f0101' color='whiteAlpha.700' justify='space-between' h={'8vh'} alignItems='center' fontFamily={'ZCOOL QingKe HuangYou'} fontSize={18} letterSpacing='0.42em' fontWeight={400}>
       <Flex pl={5} fontSize='24px' align='center'>
       <Link href="/" passHref>
         亚太辩论
       </Link>
       </Flex>
       {!session && (
-      <Flex align={'center'} justify='space-between' h='100%' pr={5} fontSize={'18px'}>
+      <Flex align={'center'} justify='space-between' h='100%' pr={5}>
       <Link href="/" passHref>
-          <Flex ml={5} _hover={{color: 'white'}}>主页</Flex>
+          <Flex ml={5} _hover={{color: 'white'}} >主页</Flex>
         </Link>
         
         <Link href="/topic" passHref>

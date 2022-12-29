@@ -4,12 +4,13 @@ import React from "react";
 import { HiAcademicCap } from "react-icons/hi";
 import event from '../public/events.json'
 import {
-  Flex,
+  Flex
 } from '@chakra-ui/react'
+import styles from '../styles/Timelines.module.css'
 export default function Timelines(){
   const { events } = event
-  return(
-    <Flex bgColor='purple.100'>
+  return (
+    <Flex className={styles.body}>
       <VerticalTimeline >
       {events.map(event => {
             return (
