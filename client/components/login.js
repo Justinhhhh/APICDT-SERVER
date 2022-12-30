@@ -17,7 +17,7 @@ function Login() {
             redirect: false,
             email: email,
             password: password,
-            callbackUrl: `${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/participantsHome`,
+            callbackUrl: `https://apicdt.vercel.app/participantsHome`,
         })
         console.log(res)
 
