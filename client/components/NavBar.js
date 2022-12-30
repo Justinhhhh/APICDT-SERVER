@@ -32,7 +32,7 @@ function NavBar() {
   //   getRoles()
 
   const handleSignOut = async () => {
-    const data = await signOut({ redirect: true, callbackUrl: `${process.env.NEXT_PUBLIC_NEXTAUTH_URL}` })
+    const data = await signOut({ redirect: true, callbackUrl: `http://localhost:3000` })
     if (data) {
       router.push(data.url)
     }
