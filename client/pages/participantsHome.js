@@ -1,10 +1,12 @@
 import { getSession, useSession } from "next-auth/react";
 import Announcement from "../components/announcement";
 import { useRouter } from "next/router";
+import announcement from "../public/announcement.json"
 
-function ParticipantsHome({ data }) {
+function ParticipantsHome(params) {
+    const { data } = announcement
     return (
-        <Announcement announcement={data.data}></Announcement>
+        <Announcement announcement={data}></Announcement>
      );
 }
 

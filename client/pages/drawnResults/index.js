@@ -4,6 +4,7 @@ import useSWR from 'swr'
 import { useRouter } from 'next/router'
 import DrawnResultsArea from '../../components/drawnResultsArea'
 import CountriesName from '../../public/country.json'
+import results from '../../public/drawnResults.json'
 
 const fetcher = async () => {
     const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}drawn-results`)
@@ -14,8 +15,8 @@ const fetcher = async () => {
 
 function DrawnResults() {
     const { Countries } = CountriesName
-    const { data, error } = useSWR(`drawnResults`, fetcher)
-    console.log(data)
+    // const { data, error } = useSWR(`drawnResults`, fetcher)
+    const {data} = results
     if (!data) 
         return <></>
     

@@ -1,0 +1,42 @@
+{
+    "data": [
+      {
+        "id": 1,
+        "attributes": {
+          "name": "林俊杰",
+          "description": "最受欢迎男歌手",
+          "createdAt": "2022-12-18T14:11:26.720Z",
+          "updatedAt": "2022-12-18T14:11:27.385Z",
+          "publishedAt": "2022-12-18T14:11:27.384Z"
+        }
+      },
+      {
+        "id": 2,
+        "attributes": {
+          "name": "周杰伦",
+          "description": "最佳男歌手",
+          "createdAt": "2022-12-18T14:11:48.864Z",
+          "updatedAt": "2022-12-18T14:11:49.633Z",
+          "publishedAt": "2022-12-18T14:11:49.632Z"
+        }
+      },
+      {
+        "id": 3,
+        "attributes": {
+          "name": "林宥嘉",
+          "description": "最棒歌手",
+          "createdAt": "2022-12-18T14:12:09.271Z",
+          "updatedAt": "2022-12-18T14:12:11.108Z",
+          "publishedAt": "2022-12-18T14:12:11.106Z"
+        }
+      }
+    ],
+    "meta": {
+      "pagination": {
+        "page": 1,
+        "pageSize": 25,
+        "pageCount": 1,
+        "total": 3
+      }
+    }
+  }

@@ -5,8 +5,7 @@ import "@fontsource/zcool-xiaowei"
 
 function CommitteeCard({ name, description }) {
     return ( 
-        // <Card maxW='sm' ml={100} pb={20} mb={20} mt={20} fontFamily={"Inder"}>
-        <Card maxW='sm' fontFamily={"ZCOOL XiaoWei"} mt={10} mb={10} color="#fafafa">
+        <Card maxW='sm' fontFamily={"ZCOOL XiaoWei"} bgColor='#000000' boxShadow='lg' mt={10} ml={10} mb={10} color="#fafafa">
         <CardBody>
                 <Image
             alt={name}

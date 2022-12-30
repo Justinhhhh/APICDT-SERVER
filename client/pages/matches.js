@@ -1,7 +1,9 @@
 import MatchCards from "../components/matchCards";
+import match from "../public/matches.json"
 
 function Matches({ matches }) {
-    const { data } = matches 
+    // const { data } = matches 
+    const { data } = match
     return ( 
         <MatchCards matches={data} />
      );

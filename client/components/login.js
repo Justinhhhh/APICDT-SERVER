@@ -4,6 +4,7 @@ import { signIn } from "next-auth/react";
 import { Router } from "next/router";
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
+import "@fontsource/zcool-xiaowei"
 
 function Login() {
     const router = useRouter()
@@ -30,20 +31,20 @@ function Login() {
     }
 
     return (
-        <Card fontFamily={'Ma Shan Zheng'} bgColor="white" boxShadow={'lg'} maxW='sm' pb={20} pl={10} pr={10}pt={10} align='center' justifyContent='center'>
+        <Card fontFamily={"ZCOOL XiaoWei"} bgColor="whiteAlpha.800" boxShadow={'lg'} maxW='md' pb={20} pl={10} pr={10}pt={10} align='center' justifyContent='center'>
             <CardBody>
                 <Flex justify={'center'}>
-                    <Avatar bg='purple.500'/>
+                    <Avatar bg='#2f0101'/>
                     </Flex>
-            <Stack mt='6' spacing='3' align={'center'}>
-                    <Heading fontFamily={'Ma Shan Zheng'} fontSize='36' size='md' mb={10}>登录</Heading>
+            <Stack mt='6' spacing='6' align={'center'}>
+                    <Heading fontFamily={"ZCOOL XiaoWei"} fontSize='36' size='md' mb={10}>登录</Heading>
                     <FormControl>
-                        <FormLabel fontSize={20}>Email</FormLabel>
-                        <Input placeholder="Your email" w={80} onChange={e => setEmail(e.target.value)} />
-                        <FormLabel fontSize={20}>Password</FormLabel>
-                        <Input placeholder="Your password" w={80} onChange={e => setPassword(e.target.value)} type="password"/>
+                        <FormLabel fontSize={20}>电子邮件</FormLabel>
+                        <Input placeholder="电子邮件" w={80} borderColor='black' onChange={e => setEmail(e.target.value)} />
+                        <FormLabel fontSize={20} mt={5}>密码</FormLabel>
+                        <Input placeholder="密码" w={80} borderColor='black' onChange={e => setPassword(e.target.value)} type="password"/>
                         </FormControl>
-                        <Button type='submit' mt={'29'} h={'40px'} w={'120px'} colorScheme={'purple'} onClick={handleSubmit}>Login</Button>
+                        <Button type='submit' h={'40px'} w={'120px'} colorScheme={'blackAlpha'} onClick={handleSubmit}>Login</Button>
             </Stack>
         </CardBody>
         </Card>

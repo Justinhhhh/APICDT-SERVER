@@ -1,7 +1,9 @@
 import Topic from "../components/topic";
+import topic from "../public/topics.json"
 
 function TopicPage({ topics }) {
-    const { data } = topics
+    // const { data } = topics
+    const { data } = topic
     return (
         <Topic topics={data}></Topic>
     );

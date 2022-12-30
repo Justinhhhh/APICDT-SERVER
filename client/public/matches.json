@@ -1,0 +1,38 @@
+{
+    "data": [
+      {
+        "id": 3,
+        "attributes": {
+          "teamA": "南洋理工大学",
+          "teamB": "新加坡国立大学",
+          "createdAt": "2022-12-18T14:58:45.874Z",
+          "updatedAt": "2022-12-26T06:41:40.433Z",
+          "publishedAt": "2022-12-18T14:58:46.380Z",
+          "date": "2023-07-03",
+          "time": "09:00:00.000",
+          "matchNo": 1
+        }
+      },
+      {
+        "id": 4,
+        "attributes": {
+          "teamA": "清华大学",
+          "teamB": "北京大学",
+          "createdAt": "2022-12-18T14:59:26.090Z",
+          "updatedAt": "2022-12-26T06:41:44.107Z",
+          "publishedAt": "2022-12-18T14:59:26.583Z",
+          "date": "2022-07-04",
+          "time": "13:20:00.000",
+          "matchNo": 2
+        }
+      }
+    ],
+    "meta": {
+      "pagination": {
+        "page": 1,
+        "pageSize": 25,
+        "pageCount": 1,
+        "total": 2
+      }
+    }
+  }

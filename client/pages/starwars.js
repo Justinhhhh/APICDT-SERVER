@@ -54,36 +54,36 @@ function Starwars() {
             router.push(`/drawnResults/${area}`)
         }, 5000)
 
-        try {
-            const userResponse = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}schools?filters[leaderEmail][$eq]=${email}`, {
-                method: 'GET',
-                headers: {
-                    'Content-type': 'application/json'
-                }
-            })
-            const userRes = await userResponse.json()
-            const schoolName = userRes.data[0].attributes.schoolName
-            console.log(schoolName, area, duration)
-            const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}drawn-results`, {
-                method: 'POST',
-                body: JSON.stringify({
-                    data: {
-                        area: area,
-                        schoolName: schoolName,
-                        timeUsed: duration
-                    }
-                }),
-                headers: {
-                    'Content-type': 'application/json'
-                }
-            })
-            console.log(response)
-            const res = await response.json()
-            const { data } = res
-        }
-        catch (e) {
-            console.log(e)
-        }
+        // try {
+        //     const userResponse = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}schools?filters[leaderEmail][$eq]=${email}`, {
+        //         method: 'GET',
+        //         headers: {
+        //             'Content-type': 'application/json'
+        //         }
+        //     })
+        //     const userRes = await userResponse.json()
+        //     const schoolName = userRes.data[0].attributes.schoolName
+        //     console.log(schoolName, area, duration)
+        //     const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}drawn-results`, {
+        //         method: 'POST',
+        //         body: JSON.stringify({
+        //             data: {
+        //                 area: area,
+        //                 schoolName: schoolName,
+        //                 timeUsed: duration
+        //             }
+        //         }),
+        //         headers: {
+        //             'Content-type': 'application/json'
+        //         }
+        //     })
+        //     console.log(response)
+        //     const res = await response.json()
+        //     const { data } = res
+        // }
+        // catch (e) {
+        //     console.log(e)
+        // }
 
     }
 

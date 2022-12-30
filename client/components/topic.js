@@ -9,20 +9,21 @@ import {
     TableCaption,
     TableContainer,
     Box,
-    Text
+    Text,
 } from '@chakra-ui/react'
-import "@fontsource/ma-shan-zheng"
+import "@fontsource/zcool-xiaowei"
+import styles from '../styles/topic.module.css'
 
 function Topic({ topics }) {
     // const { topics } = topic
     return ( 
-        <Box fontFamily={"Ma Shan Zheng"} mt={20} mb={20} ml={20}>
-            <Text mb={30} fontSize={48}>辩题列表</Text>
+        <Box fontFamily={"ZCOOL XiaoWei"} pt={20} pb={20} pl={20} h={'92vh'} className={styles.body} color="#fcffea">
+            <Text mb={30} fontSize={48} >辩题列表</Text>
         <TableContainer width={'60vw'} borderColor='purple'>
-            <Table variant='striped' colorScheme='purple' borderColor={'purple'}>
+            <Table variant='striped' colorScheme='whiteAlpha' borderColor={'black'}>
                 <Thead>
                 <Tr>
-                    <Th fontFamily={"Ma Shan Zheng"} fontSize={36}>辩题</Th>
+                    <Th fontFamily={"ZCOOL XiaoWei"} fontSize={36} color="#fcffea">辩题</Th>
                 </Tr>
                 </Thead>
                 <Tbody borderColor={'purple'}>

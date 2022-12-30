@@ -19,17 +19,17 @@ function NavBar() {
     )
   }
 
-  const getRoles = async () => {
-    const response = await fetch('api/roles', {
-      method: 'GET',
-    })
-    const res = await response.json()
-    const { data } = res
-    setRole(data[0].attributes.role)
-  }
+  // const getRoles = async () => {
+  //   const response = await fetch('api/roles', {
+  //     method: 'GET',
+  //   })
+  //   const res = await response.json()
+  //   const { data } = res
+  //   setRole(data[0].attributes.role)
+  // }
 
-  if (session)
-    getRoles()
+  // if (session)
+  //   getRoles()
 
   const handleSignOut = async () => {
     const data = await signOut({ redirect: true, callbackUrl: `${process.env.NEXT_PUBLIC_NEXTAUTH_URL}` })
@@ -68,7 +68,7 @@ function NavBar() {
           </Link>
           </Flex>
           )}
-          {session && role == 'Participants' &&
+          {session &&
             <Flex align={'center'} justify='space-between' h='100%' pr={5} fontSize={'18px'}>
         
         <Link href="/participantsHome" passHref>
@@ -90,7 +90,7 @@ function NavBar() {
           <Flex ml={5} _hover={{ color: 'white', cursor: 'pointer' }} onClick={handleSignOut}>登出</Flex>
           </Flex>
       }
-      {session && role == 'Judges' &&
+      {/* {session  &&
             <Flex align={'center'} justify='space-between' h='100%' pr={5} fontSize={'18px'}>
 
           <Link href="/matches" passHref>
@@ -99,7 +99,7 @@ function NavBar() {
 
           <Flex ml={5} _hover={{ color: 'white', cursor: 'pointer' }} onClick={handleSignOut}>登出</Flex>
           </Flex>
-          }
+          } */}
     </Flex>
     
     )
