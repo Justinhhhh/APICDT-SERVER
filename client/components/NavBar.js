@@ -32,7 +32,7 @@ function NavBar() {
   //   getRoles()
 
   const handleSignOut = async () => {
-    const data = await signOut({ redirect: true, callbackUrl: `http://localhost:3000` })
+    const data = await signOut({ redirect: true, callbackUrl: `https://apicdt.vercel.app` })
     if (data) {
       router.push(data.url)
     }

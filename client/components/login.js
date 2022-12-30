@@ -17,7 +17,7 @@ function Login() {
             redirect: false,
             email: email,
             password: password,
-            callbackUrl: `https://apicdt.vercel.app/participantsHome`,
+            // callbackUrl: `http://localhost:3000/participantsHome`,
         })
         console.log(res)
 
@@ -25,9 +25,10 @@ function Login() {
             console.log(res.error)
         }
 
-        if (res.url) {
-            router.replace(res.url)
-        }
+        // if (res.url) {
+        //     router.replace(res.url)
+        // }
+        router.push('/participantsHome')
     }
 
     return (
