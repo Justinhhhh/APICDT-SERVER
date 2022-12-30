@@ -26,17 +26,17 @@ function About({ committees }) {
 
 export default About;
 
-export async function getStaticProps() {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}committees?populate[0]=picture`, {
-        method: 'GET',
-        headers: {
-            'Content-type': 'application/json'
-        }
-    })
-    const data = await response.json()
-    return {
-        props: {
-            committees: data
-        }
-    }
-}
+// export async function getStaticProps() {
+//     const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}committees?populate[0]=picture`, {
+//         method: 'GET',
+//         headers: {
+//             'Content-type': 'application/json'
+//         }
+//     })
+//     const data = await response.json()
+//     return {
+//         props: {
+//             committees: data
+//         }
+//     }
+// }

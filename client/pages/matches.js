@@ -11,17 +11,17 @@ function Matches({ matches }) {
 
 export default Matches;
 
-export async function getServerSideProps(context) {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}matches`, {
-        method: 'GET',
-        headers: {
-            'Content-type': 'application/json'
-        }
-    })
-    const data = await response.json()
-    return {
-        props: {
-            matches: data
-        }
-    }
-}
+// export async function getServerSideProps(context) {
+//     const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}matches`, {
+//         method: 'GET',
+//         headers: {
+//             'Content-type': 'application/json'
+//         }
+//     })
+//     const data = await response.json()
+//     return {
+//         props: {
+//             matches: data
+//         }
+//     }
+// }

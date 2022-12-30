@@ -5,12 +5,12 @@ import { useRouter } from 'next/router'
 import DrawnResultsArea from '../../components/drawnResultsArea'
 import results from '../../public/drawnResults.json'
 
-const fetcher = async () => {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}drawn-results`)
-    const res = await response.json()
-    const { data } = res
-    return data
-}
+// const fetcher = async () => {
+//     const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}drawn-results`)
+//     const res = await response.json()
+//     const { data } = res
+//     return data
+// }
 
 function Area() {
     const router = useRouter()
