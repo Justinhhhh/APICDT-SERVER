@@ -27,11 +27,11 @@ function Starwars() {
         }
     }, [])
 
-    if (!session) 
-        return (
-            <h1>Loading...</h1>
-        )
-    const email = session.user.email
+    // if (!session) 
+    //     return (
+    //         <h1>Loading...</h1>
+    //     )
+    // const email = session.user.email
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -87,13 +87,13 @@ function Starwars() {
 
     }
 
-    if (session === null) {
-        router.push('/login')
-    }
+    // if (session === null) {
+    //     router.push('/login')
+    // }
 
     return ( 
     <>
-            {session && (<Flex fontFamily={'Ma Shan Zheng'} h={'92vh'} justify='center' align='center' flexDirection={'column'}>
+             (<Flex fontFamily={'Ma Shan Zheng'} h={'92vh'} justify='center' align='center' flexDirection={'column'}>
                 {showSuccessAlert ? <AlertDialog status={'success'} description={`成功提交！页面将于5秒后跳转`} /> : <Box></Box>}
                 {showFailAlert ? <AlertDialog status={'error'} description={`请选择地区！`} /> : <Box></Box>}
             <Stack align={'center'}>
@@ -110,7 +110,7 @@ function Starwars() {
                 <Button fontSize={'72px'} p={10} mb={20} onClick={handleSubmit}>提交</Button>
             </Stack>
             {/* {submitted ? <Button mt={10}><Link href='/'>查看结果</Link></Button> : <Box></Box>} */}
-            </Flex>)}
+            </Flex>)
             </>
     );
 }

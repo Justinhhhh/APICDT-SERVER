@@ -10,24 +10,20 @@ export const authOptions = {
                 password: { label: "Password", type: "password" }
             },
             async authorize(credentials, req) {
-                // const cred = {
-                //     identifier: credentials.email,
-                //     password: credentials.password
-                // }
-                // const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}auth/local`, {
-                //     method: 'POST',
-                //     body: JSON.stringify(cred),
-                //     headers: {
-                //         'Content-type': 'application/json',
-                //         'Accept': 'application/json'
-                //     }
-                // })
-                // const data = await res.json()
-                // const user = { ...data.user, jwt: data.jwt }
-                const user = {
-                    email: 'amos@test.com',
-                    username: 'Amos'
+                const cred = {
+                    identifier: credentials.email,
+                    password: credentials.password
                 }
+                const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}auth/local`, {
+                    method: 'POST',
+                    body: JSON.stringify(cred),
+                    headers: {
+                        'Content-type': 'application/json',
+                        'Accept': 'application/json'
+                    }
+                })
+                const data = await res.json()
+                const user = { ...data.user, jwt: data.jwt }
                 
                 if (user) {
                     return user
@@ -64,6 +60,17 @@ export const authOptions = {
           },
         }
 }
+
+// import GoogleProvider from "next-auth/providers/google";
+
+// export const authOptions = {
+//     providers: [
+//         GoogleProvider({
+//           clientId: "262969199372-kequm2bhls676a27ptm63pe5da765jdn.apps.googleusercontent.com",
+//           clientSecret: "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"
+//         })
+//       ]
+// }
 
 const Auth = (req, res) =>
     NextAuth(req, res, authOptions);

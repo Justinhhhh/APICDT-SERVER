@@ -17,18 +17,17 @@ function Login() {
             redirect: false,
             email: email,
             password: password,
-            // callbackUrl: `http://localhost:3000/participantsHome`,
+            callbackUrl: `http://localhost:3000/participantsHome`,
         })
-        console.log(res)
+        // console.log(res)
 
         if (res?.error) {
             console.log(res.error)
         }
 
-        // if (res.url) {
-        //     router.replace(res.url)
-        // }
-        router.push('/participantsHome')
+        if (res.url) {
+            router.replace(res.url)
+        }
     }
 
     return (
