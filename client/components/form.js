@@ -20,8 +20,12 @@ function Form({ information }) {
     const router = useRouter()
 
     const { Countries } = country
-    const [schoolName, setSchoolName] = useState()
-    const [leaderName, setLeaderName] = useState()
+    const [schoolNameCN, setSchoolNameCN] = useState()
+    const [schoolNameEN, setSchoolNameEN] = useState()
+    const [leaderNameCN, setLeaderNameCN] = useState()
+    const [leaderNameEN, setLeaderNameEN] = useState()
+    const [topic1, setTopic1] = useState()
+    const [topic2, setTopic2] = useState()
     const [leaderEmail, setLeaderEmail] = useState()
     const [leaderPhone, setLeaderPhone] = useState()
     const [submitted, setSubmitted] = useState(false)
@@ -80,11 +84,20 @@ function Form({ information }) {
                 <Flex flexDirection='row' mt='59px' mb='29px' fontWeight={'500px'}>
                     <Flex flexDirection='column' mr='54px'>
                     <FormLabel>学校资料</FormLabel>
-                                <Input focusBorderColor='Purple' borderColor={'Black'} w='320px' value={schoolName} onChange={(e) => setSchoolName(e.target.value)} placeholder='学校名称' type='text' required/>
+                                <Input focusBorderColor='Purple' borderColor={'Black'} w='320px' value={schoolNameCN} onChange={(e) => setSchoolNameCN(e.target.value)} placeholder='学校名称-中文' type='text' required/>
                     </Flex>
                     <Flex flexDirection='column'>
                     <FormLabel>队长资料</FormLabel>
-                    <Input focusBorderColor='Purple' borderColor={'Black'} w='320px' value={leaderName} onChange={(e) => setLeaderName(e.target.value)} placeholder='队长名称' type='text' required/>
+                    <Input focusBorderColor='Purple' borderColor={'Black'} w='320px' value={leaderNameCN} onChange={(e) => setLeaderNameCN(e.target.value)} placeholder='队长名称-中文' type='text' required/>
+                    </Flex>
+                </Flex>
+                <Flex flexDirection='row' mt='10px' mb='29px' fontWeight={'500px'}>
+                    <Flex flexDirection='column' mr='54px'>
+                
+                     <Input focusBorderColor='Purple' borderColor={'Black'} w='320px' value={schoolNameEN} onChange={(e) => setSchoolNameEN(e.target.value)} placeholder='学校名称-英文' type='text' required/>
+                    </Flex>
+                    <Flex flexDirection='column'>   
+                    <Input focusBorderColor='Purple' borderColor={'Black'} w='320px' value={leaderNameEN} onChange={(e) => setLeaderNameEN(e.target.value)} placeholder='队长名称-英文' type='text' required/>
                     </Flex>
                 </Flex>
                 <Flex flexDirection='row' mt='10px' mb='29px' fontWeight={'500px'}>
@@ -100,6 +113,16 @@ function Form({ information }) {
                             })}
                         </Select>
                         <Input ml={5} focusBorderColor='Purple' value={leaderPhone} borderColor={'Black'} w='320px' placeholder='队长联络电话' onChange={(e) => setLeaderPhone(e.target.value)} type='text' required />
+                    </Flex>
+                </Flex>
+                <Flex flexDirection='row' mt='30px' mb='50px' fontWeight={'500px'}>
+                    <Flex flexDirection='column' mr='54px'>
+                    <FormLabel>辩题一</FormLabel>
+                                <Input focusBorderColor='Purple' borderColor={'Black'} w='320px' value={topic1} onChange={(e) => setTopic1 (e.target.value)} placeholder='请选择队伍辩题' type='text' required/>
+                    </Flex>
+                    <Flex flexDirection='column'>
+                    <FormLabel>辩题二</FormLabel>
+                    <Input focusBorderColor='Purple' borderColor={'Black'} w='320px' value={topic2} onChange={(e) => setTopic2(e.target.value)} placeholder='请选择队伍辩题' type='text' required/>
                     </Flex>
                 </Flex>
             </FormControl>
