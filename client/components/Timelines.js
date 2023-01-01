@@ -33,9 +33,9 @@ export default function Timelines(){
               className="vertical-timeline-element--work" 
               contentStyle={{ background: 'rgba(18, 18, 18, 0.6)' }}
               contentArrowStyle={{ borderRight: '10px solid  rgba(18, 18, 18, 0.6)' }}
-              date= { event.date}
+              date= {event.date}
               dateClassName={styles.date}
-              iconStyle = {{background: 'rgba(18, 18, 18, 0.8)' }}
+              iconStyle = {{background: 'rgba(18, 18, 18, 0.85)'}}
               key={event.id}>
               <Flex fontFamily={"ZCOOL XiaoWei"}  fontSize={25} letterSpacing='0.37em' justify='center' color='#dedede'>{event.event}</Flex>
               </VerticalTimelineElement>
