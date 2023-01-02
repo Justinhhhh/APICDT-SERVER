@@ -31,11 +31,11 @@ export default function Timelines(){
           return (
               <VerticalTimelineElement
               className="vertical-timeline-element--work" 
-              contentStyle={{ background: 'rgba(18, 18, 18, 0.6)' }}
+              contentStyle={{ background: 'rgba(18, 18, 18, 0.6)' ,borderBottomColor:" Black", boxShadow:"none"}}
               contentArrowStyle={{ borderRight: '10px solid  rgba(18, 18, 18, 0.6)' }}
               date= {event.date}
               dateClassName={styles.date}
-              iconStyle = {{background: 'rgba(18, 18, 18, 0.85)'}}
+              iconStyle = {{background: 'rgba(18, 18, 18, 0.85)', boxShadow:"none"}}
               key={event.id}>
               <Flex fontFamily={"ZCOOL XiaoWei"}  fontSize={25} letterSpacing='0.37em' justify='center' color='#dedede'>{event.event}</Flex>
               </VerticalTimelineElement>
