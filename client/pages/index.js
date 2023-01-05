@@ -15,7 +15,7 @@ export default function Home() {
 
       <div>
         <Header image={logo} title="第十一届亚太大专华语辩论公开赛"/>
-          <Timelines />
+        <Timelines />
       </div>
     </div>
   )

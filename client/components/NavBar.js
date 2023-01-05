@@ -2,7 +2,7 @@ import {
   Flex,
   Box,
 } from '@chakra-ui/react'
-//import "@fontsource/zcool-qingke-huangyou"
+import "@fontsource/zcool-qingke-huangyou"
 import Link from 'next/link'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
