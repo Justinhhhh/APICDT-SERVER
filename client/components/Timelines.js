@@ -1,7 +1,7 @@
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import React from "react";
-import Zoom from 'react-reveal/Zoom';
+
 import event from '../public/events.json'
 import {
   Flex,
@@ -13,16 +13,16 @@ import styles from '../styles/Timelines.module.css'
 export default function Timelines(){
   const { events } = event
   return (
-    <Card className={styles.body} >
-            <Zoom>
-                <Text className={styles.text} fontFamily= {"ZCOOL XiaoWei"}>
+    <Card className={styles.body} align="center">
+            <Flex>
+                <Text className={styles.text}  fontFamily= {"ZCOOL XiaoWei"}>
                     辩处事之道，论经世之心；探人间至理，证生活本真<br/>
                     口角锋芒，尽显大家风采；舌灿莲花，不负才俊风流<br/>
                     己亥年盛夏，看绝艳惊才，汇聚狮城<br/>
                     第十一届亚太大专华语辩论赛，静候君来。
                 </Text >
                 
-            </Zoom>
+            </Flex>
             <Text className={styles.header} fontFamily= {"ZCOOL XiaoWei"} fontWeight={'50'} color='#dedede'>
                     比赛行程<br/>
             </Text >
