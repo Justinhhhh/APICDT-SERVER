@@ -19,7 +19,7 @@ function Announcement({ announcement }) {
                         </CardBody>
                         </Card>
                     )
-                    
+                
                      } )}
                      </Box>
              
