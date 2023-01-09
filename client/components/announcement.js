@@ -10,16 +10,16 @@ function Announcement({ announcement }) {
                     const date = new Date(ann.attributes.publishedAt).toLocaleDateString('en-SG')
                     const time = new Date(ann.attributes.publishedAt).toLocaleTimeString('en-SG')
                     return (
-                        <Card  align='center' width='80%'  boxShadow='xl' mt={10} mb={30} className={styles.announcement}>
+                        <Card  align='center' width='80%'  boxShadow='xl' mt={10} mb={30} className={styles.announcement} key={ann.id}>
                         <CardBody >
-                        <Heading  fontFamily={'Ma Shan Zheng'} as='h3' size='lg' color='#dedede' align='center'>{ann.attributes.title}</Heading>
+                        <Heading  fontFamily={'Ma Shan Zheng'} as='h3' size='lg' color='#dedede' align='center'>{`${ann.attributes.title} `}</Heading>
                         <br /> 
-                        <Text color='#dedede' key={ann.id}>{`${ann.attributes.description} `}</Text>
-                        <Text color='#dedede' key={ann.id}>{` ${date} ${time}`}</Text>
+                        <Text color='#dedede' >{`${ann.attributes.description} `}</Text>
+                        <Text color='#dedede' >{` ${date} ${time}`}</Text>
                         </CardBody>
                         </Card>
-                 
                     )
+                    
                      } )}
                      </Box>
              
