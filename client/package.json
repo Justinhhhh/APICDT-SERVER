@@ -19,6 +19,7 @@
     "@fontsource/montserrat": "^4.5.13",
     "@fontsource/zcool-qingke-huangyou": "^4.5.12",
     "@fontsource/zcool-xiaowei": "^4.5.12",
+    "@mui/lab": "^5.0.0-alpha.114",
     "@next/font": "^13.0.6",
     "eslint": "8.29.0",
     "eslint-config-next": "13.0.6",
@@ -30,6 +31,8 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
     "react-vertical-timeline-component": "^3.6.0",
+    "svelte-timelines": "^0.0.2",
+    "svelte-vertical-timeline": "^0.0.2",
     "swr": "^2.0.0"
   },
   "devDependencies": {
