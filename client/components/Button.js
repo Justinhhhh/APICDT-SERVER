@@ -20,7 +20,7 @@ export default function Buttons({text,title,description,falsebutton,checkbutton}
     const cancelRef = React.useRef()
         return (
             <>
-            <Button colorScheme={'purple'} onClick={onOpen} mt={'29'} h={'40px'} w={'120px'}>{`${text}`}</Button>
+            <Button colorScheme={'purple'} onClick={onOpen} ml={10} mt={'29'} h={'40px'} w={'120px'}>{`${text}`}</Button>
             <AlertDialog 
               isOpen={isOpen}
             leastDestructiveRef={cancelRef}

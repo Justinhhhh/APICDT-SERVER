@@ -9,7 +9,7 @@ function MatchCards({ matches }) {
         <Flex align='center' flexDirection='column'>
                 {matches.map(match => {
                 return (
-                    <MatchCard key={match.id} matchNo={match.attributes.matchNo} teamA={match.attributes.teamA} teamB={match.attributes.teamB} date={match.attributes.date} time={match.attributes.time} />
+                    <MatchCard key={match.id} matchNo={match.attributes.matchNo} teamA={match.attributes.teamA} teamB={match.attributes.teamB} matchTime={match.attributes.matchTime} />
                 )
             })}
             </Flex>

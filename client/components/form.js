@@ -11,9 +11,10 @@ import {
 import country from '../public/country.json'
 import AlertDialog from './alert';
 import "@fontsource/inder";
-import "@fontsource/ma-shan-zheng"
+import "@fontsource/zcool-xiaowei"
 // import Button from './Button';
 import { useState } from 'react'
+import styles from '../styles/form.module.css'
 import { useRouter } from 'next/router';
 
 function Form({ information }) {
@@ -52,6 +53,10 @@ function Form({ information }) {
         setSubmitted(true)
     }
 
+    const handleBackSubmit = async (e) => {
+        setSubmitted(false)
+    }
+
     const handlePasswordSubmit = async (e) => {
         e.preventDefault()
     
@@ -76,8 +81,8 @@ function Form({ information }) {
     }
 
     return (
-        <Box bgColor='#e4c5ed' h='92vh' pt={100} pl={100} fontFamily={"Ma Shan Zheng"}>
-            <Heading fontSize='48px' fontFamily={"Ma Shan Zheng"}>报名</Heading>
+        <Box className={styles.body} h='92vh' pt={100} pl={100} fontFamily={"ZCOOL XiaoWei"}  color="#fcffea">
+            <Heading fontSize='60px' fontFamily={"ZCOOL XiaoWei"}>报名</Heading>
             {!submitted && 
                 <div>
             <FormControl>
@@ -126,7 +131,7 @@ function Form({ information }) {
                     </Flex>
                 </Flex>
             </FormControl>
-                    <Button type='submit' onClick={handleSubmit}>报名</Button>
+                    <Button fontSize={'20'} type='submit' p={6} colorScheme={'whiteAlpha'}  onClick={handleSubmit}>报名</Button>
                 </div>}
             {submitted && 
                 <>
@@ -135,7 +140,8 @@ function Form({ information }) {
                         <FormLabel>密码</FormLabel>
                         <Input placeholder='密码' value={password} type='password' focusBorderColor='Purple' borderColor={'Black'} w='320px' onChange={(e) => setPassword(e.target.value)}/>
                     </FormControl>
-                <Button mt={5} type='submit' onClick={handlePasswordSubmit}>提交</Button>
+                <Button mt={5} p={6} fontSize={'20'} colorScheme={'whiteAlpha'} type='submit' onClick={handlePasswordSubmit}>提交</Button>
+                <Button ml={5} mt={5} p={6} fontSize={'20'} colorScheme={'whiteAlpha'} type='submit' onClick={handleBackSubmit}>返回</Button>
                 </>}
         </Box>
     );

@@ -3,7 +3,7 @@ import "@fontsource/ma-shan-zheng"
 import styles from '../styles/announcement.module.css'
 function Announcement({ announcement }) {
     return ( 
-        <Flex mt={10} fontFamily={'Ma Shan Zheng'} align='center' flexDir='column' h={'92vh'}>
+        <Flex mt={10} fontFamily={'Ma Shan Zheng'} align='center' flexDir='column' >
             <Heading fontFamily={'Ma Shan Zheng'}>最新消息</Heading>
             <Box align='center'>
                 {announcement.map((ann) => {
