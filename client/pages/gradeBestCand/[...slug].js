@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import GradeBestCand from "../../components/GradeBestCand";
+import GradeBestCand from "../../components/gradeBestCand";
 import { Flex, Heading } from "@chakra-ui/react";
 import "@fontsource/zcool-xiaowei"
 

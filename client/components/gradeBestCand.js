@@ -5,32 +5,9 @@ import { useRouter } from "next/router";
 
 function GradeBestCand({ teamA, teamB }) {
     const { Contestants } = contestant
+    console.log('hello',teamA)
     const router = useRouter()
 
-    const handleClickA = async (e) => {
-        e.preventDefault()
-        setTeamWon("teamA")
-        if (isAClicked) {
-            setIsAClicked(false)
-        }
-        else {
-            setIsAClicked(true)
-            setIsBClicked(false)
-        }
-    }
-
-    const handleClickB = async (e) => {
-        e.preventDefault()
-        if (isBClicked) {
-            setIsBClicked(false)
-        }
-        else {
-            setIsAClicked(false)
-            setIsBClicked(true)
-        }
-        setTeamWon("teamB")
-    }
-    
     const handleSubmit = async(e) => {
         e.preventDefault()
         router.replace(`http://localhost:3000/gradeSummary/${teamA}/${teamB}`)
