@@ -65,7 +65,12 @@ function NavBar() {
         
           <Link href="/drawnResults" passHref>
           <Flex ml={5} _hover={{color: 'white'}}>抽签结果</Flex>
-          </Link>
+            </Link>
+            
+            <Link href="/results1331/南洋理工大学/新加坡国立大学" passHref>
+        <Flex ml={5} _hover={{color: 'white'}}>比赛结果</Flex>
+            </Link>
+            
             <Link href="/" passHref>
           <Flex ml={5} _hover={{ color: 'white', cursor: 'pointer' }} onClick={() => setPartView(false)}>登出</Flex>
           </Link>
@@ -91,7 +96,7 @@ function NavBar() {
     
         <Link href="/about" passHref>
         <Flex ml={5} _hover={{color: 'white'}}>关于我们</Flex>
-              </Link>
+            </Link>
               </Flex>
               )}
       {/* {session  &&
