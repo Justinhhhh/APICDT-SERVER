@@ -125,18 +125,18 @@ function results({ results }) {
 
 export default results;
 
-export async function getServerSideProps(context) {
-    const { slug } = context.params
-    const response = await fetch(`http://localhost:1337/api/results?filters[teamA][$eq]=${slug[0]}&filters[teamB][$eq]=${slug[1]}`, {
-        method: 'GET',
-        headers: {
-            'Content-type': 'application/json'
-        }
-    })
-    const data = await response.json()
-    return {
-        props: {
-            results: data
-        }
-    }
-}
+// export async function getServerSideProps(context) {
+//     const { slug } = context.params
+//     const response = await fetch(`http://localhost:1337/api/results?filters[teamA][$eq]=${slug[0]}&filters[teamB][$eq]=${slug[1]}`, {
+//         method: 'GET',
+//         headers: {
+//             'Content-type': 'application/json'
+//         }
+//     })
+//     const data = await response.json()
+//     return {
+//         props: {
+//             results: data
+//         }
+//     }
+// }

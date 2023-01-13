@@ -39,7 +39,7 @@ function GradeImpression({ resultsID }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        router.replace(`http://localhost:3000/gradeBestCand/1`)
+        router.replace(`http://apicdt.vercel.app/gradeBestCand/1`)
         // router.replace(`http://localhost:3000/gradeBestCand/${resultsID}`)
         // const response = await fetch(`http://localhost:1337/api/results/${resultsID}`, {
         //     method: 'PUT',

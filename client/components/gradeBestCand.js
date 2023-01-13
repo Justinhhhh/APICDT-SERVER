@@ -23,7 +23,7 @@ function GradeBestCand({ resultsID }) {
         //     })
         // })
         // router.replace(`http://localhost:3000/gradeSummary/${resultsID}`)
-        router.replace(`http://localhost:3000/gradeSummary/1`)
+        router.replace(`http://apicdt.vercel.app/gradeSummary/1`)
     }
 
     return ( 

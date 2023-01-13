@@ -120,7 +120,7 @@ function GradeTable({ teamA, teamB }) {
         // const id = data[0].id
         // console.log(id)
         // router.replace(`http://localhost:3000/gradeImpression/${id}`)
-        router.replace(`http://localhost:3000/gradeImpression/1`)
+        router.replace(`http://apicdt.vercel.app/gradeImpression/1`)
     }
     return (
         < Flex mt = { 20} fontFamily = { 'ZCOOL XiaoWei'} align = { 'center'} flexDir = { 'column'} >
