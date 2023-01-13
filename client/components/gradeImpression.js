@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 
 
-function GradeImpression({ teamA, teamB }) {
+function GradeImpression({ resultsID }) {
     const router = useRouter()
     const [isAClicked, setIsAClicked] = useState(false)
     const [isBClicked, setIsBClicked] = useState(false)
@@ -39,8 +39,20 @@ function GradeImpression({ teamA, teamB }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        router.replace(`http://localhost:3000/gradeBestCand/${teamA}/${teamB}`)
-
+        router.replace(`http://localhost:3000/gradeBestCand/1`)
+        // router.replace(`http://localhost:3000/gradeBestCand/${resultsID}`)
+        // const response = await fetch(`http://localhost:1337/api/results/${resultsID}`, {
+        //     method: 'PUT',
+        //     headers: {
+        //         'Content-type': 'application/json'
+        //     },
+        //     body: JSON.stringify({
+        //         data: {
+        //             bestImpression: teamWon
+        //         }
+        //     })
+        // })
+        // const data = await response.json()
     }
     return (
         <Flex mt={20} fontFamily={'ZCOOL XiaoWei'} align={'center'} flexDir={'column'}>

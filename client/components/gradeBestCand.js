@@ -2,20 +2,34 @@ import { Button, Flex, Heading, Select } from "@chakra-ui/react";
 import contestant from '../public/debate.json'
 import "@fontsource/zcool-xiaowei"
 import { useRouter } from "next/router";
+import { useState } from "react";
 
-function GradeBestCand({ teamA, teamB }) {
+function GradeBestCand({ resultsID }) {
     const { Contestants } = contestant
-    console.log('hello',teamA)
+    const [bestCand, setBestCand] = useState("")
     const router = useRouter()
 
     const handleSubmit = async(e) => {
         e.preventDefault()
-        router.replace(`http://localhost:3000/gradeSummary/${teamA}/${teamB}`)
+        // const response = await fetch(`http://localhost:1337/api/results/${resultsID}`, {
+        //     method: 'PUT',
+        //     headers: {
+        //         'Content-type': 'application/json'
+        //     },
+        //     body: JSON.stringify({
+        //         data: {
+        //             bestCand: bestCand
+        //         }
+        //     })
+        // })
+        // router.replace(`http://localhost:3000/gradeSummary/${resultsID}`)
+        router.replace(`http://localhost:3000/gradeSummary/1`)
     }
+
     return ( 
         <Flex mt={20} align='center' flexDir={'column'} fontFamily={'ZCOOL XiaoWei'}>
             <Heading fontFamily={'ZCOOL XiaoWei'} fontSize='70' mb={20}>最佳辩手</Heading>
-            <Select borderColor={'Black'} w='200px' fontSize={24} placeholder='最佳辩手'>
+            <Select borderColor={'Black'} w='200px' fontSize={24} placeholder='最佳辩手' onChange={(e) => setBestCand(e.target.value)}>
                         {Contestants.map(contestant => {
                             return (
                                 <option key={contestant.id}>{contestant}</option>

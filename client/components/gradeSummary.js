@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 
 
-function GradeSummary({ teamA, teamB }) {
+function GradeSummary({ resultsID }) {
     const [ teamWon, setTeamWon ] = useState("")
     const [showSuccessAlert, setShowSuccessAlert] = useState(false)
     const router = useRouter()
@@ -40,6 +40,17 @@ function GradeSummary({ teamA, teamB }) {
     const handleSubmit = async (e) => {
         e.preventDefault()
         setShowSuccessAlert(true)
+        // const response = await fetch(`http://localhost:1337/api/results/${resultsID}`, {
+        //     method: 'PUT',
+        //     headers: {
+        //         'Content-type': 'application/json'
+        //     },
+        //     body: JSON.stringify({
+        //         data: {
+        //             bestSummary: teamWon
+        //         }
+        //     })
+        // })
         setTimeout(() => {
             setShowSuccessAlert(false)
             router.push(`/`)
