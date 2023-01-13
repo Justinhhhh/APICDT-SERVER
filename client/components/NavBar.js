@@ -12,6 +12,8 @@ function NavBar() {
   const [drawn, setDrawn] = useState(true)
   const [role, setRole] = useState()
   const [partView, setPartView] = useState(false)
+  const [judgeView, setJudgeView] = useState(false)
+  const [committeeView, setCommitteeView] = useState(false)
 
   const { data: session, status } = useSession()
   const router = useRouter()
@@ -67,38 +69,65 @@ function NavBar() {
           <Flex ml={5} _hover={{color: 'white'}}>抽签结果</Flex>
             </Link>
             
-            <Link href="/results1331/南洋理工大学/新加坡国立大学" passHref>
-        <Flex ml={5} _hover={{color: 'white'}}>比赛结果</Flex>
-            </Link>
-            
             <Link href="/" passHref>
           <Flex ml={5} _hover={{ color: 'white', cursor: 'pointer' }} onClick={() => setPartView(false)}>登出</Flex>
           </Link>
           </Flex>
-        ) :
-        (
-          <Flex align={'center'} justify='space-between' h='100%' pr={5}>
-          <Link href="/" passHref>
-              <Flex ml={5} _hover={{color: 'white'}} >主页</Flex>
+        ) : (judgeView ?
+          (
+            <Flex align={'center'} justify='space-between' h='100%' pr={5} fontSize={'18px'}>
+          <Link href="/matches" passHref>
+        <Flex ml={5} _hover={{color: 'white'}}>评分表</Flex>
             </Link>
-            
-            <Link href="/topic" passHref>
-              <Flex ml={5} _hover={{color: 'white'}}>辩题</Flex>
-            </Link>
-    
-        <Link href="/registration" passHref>
-          <Flex ml={5} _hover={{color: 'white'}}>选手报名</Flex>
-            </Link>
-            
-            <Link href="/participantsHome" passHref>
-          <Flex ml={5} _hover={{color: 'white'}} onClick={() => setPartView(true)}>登录</Flex>
-        </Link>
-    
-        <Link href="/about" passHref>
-        <Flex ml={5} _hover={{color: 'white'}}>关于我们</Flex>
-            </Link>
+            <Link href="/" passHref>
+            <Flex ml={5} _hover={{ color: 'white', cursor: 'pointer' }} onClick={() => setJudgeView(false)}>登出</Flex>
+              </Link>
               </Flex>
-              )}
+          ) : (committeeView ?
+            (
+              <Flex align={'center'} justify='space-between' h='100%' pr={5}>
+              <Link href="#" passHref>
+                  <Flex ml={5} _hover={{color: 'white'}}>添加最新消息</Flex>
+          </Link>
+          <Link href="/results1331" passHref>
+                  <Flex ml={5} _hover={{color: 'white'}}>比赛结果</Flex>
+                </Link>
+                <Link href="/" passHref>
+            <Flex ml={5} _hover={{ color: 'white', cursor: 'pointer' }} onClick={() => setCommitteeView(false)}>登出</Flex>
+              </Link>
+                </Flex>
+            ) : (
+              <Flex align={'center'} justify='space-between' h='100%' pr={5}>
+              <Link href="/" passHref>
+                  <Flex ml={5} _hover={{color: 'white'}} >主页</Flex>
+                </Link>
+                
+                <Link href="/topic" passHref>
+                  <Flex ml={5} _hover={{color: 'white'}}>辩题</Flex>
+                </Link>
+        
+            <Link href="/registration" passHref>
+              <Flex ml={5} _hover={{color: 'white'}}>选手报名</Flex>
+                </Link>
+                
+                <Link href="/participantsHome" passHref>
+              <Flex ml={5} _hover={{color: 'white'}} onClick={() => setPartView(true)}>选手视角</Flex>
+                </Link>
+                
+                <Link href="/matches" passHref>
+              <Flex ml={5} _hover={{color: 'white'}} onClick={() => setJudgeView(true)}>评审视角</Flex>
+                </Link>
+                
+                <Link href="/results1331" passHref>
+              <Flex ml={5} _hover={{color: 'white'}} onClick={() => setCommitteeView(true)}>竞赛组视角</Flex>
+            </Link>
+        
+            <Link href="/about" passHref>
+            <Flex ml={5} _hover={{color: 'white'}}>关于我们</Flex>
+                </Link>
+                  </Flex>
+            )))
+            }
       {/* {session  &&
             <Flex align={'center'} justify='space-between' h='100%' pr={5} fontSize={'18px'}>
 

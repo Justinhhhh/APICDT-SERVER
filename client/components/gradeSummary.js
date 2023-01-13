@@ -53,7 +53,7 @@ function GradeSummary({ resultsID }) {
         // })
         setTimeout(() => {
             setShowSuccessAlert(false)
-            router.push(`/`)
+            router.push(`/matches`)
         }, 3000)
     }
 

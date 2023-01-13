@@ -1,4 +1,4 @@
-import { Flex, Heading, Text } from "@chakra-ui/react";
+import { Flex, Heading, Text, Divider } from "@chakra-ui/react";
 import {
     Table,
     Thead,
@@ -11,6 +11,7 @@ import {
     TableContainer,
 } from '@chakra-ui/react'
 import "@fontsource/zcool-xiaowei"
+import "@fontsource/ma-shan-zheng"
 import result from '../../public/results.json'
 
 function results({ results }) {
@@ -20,9 +21,9 @@ function results({ results }) {
     return (
         data.map(result => {
             return(
-            <Flex flexDir={'column'} mb={10} mt={10} ml={20} key={result.id}>
-                    <Heading fontFamily={'ZCOOL XiaoWei'} fontSize={70}>评委：{result.attributes.judge}</Heading>
-                    <Heading fontFamily={'ZCOOL XiaoWei'} fontSize={60} mb={10}>正方</Heading>
+            <Flex flexDir={'column'} mb={20} mt={10} ml={20} mr={20} key={result.id} fontFamily={'Ma Shan Zheng'}>
+                    <Heading fontFamily={'Ma Shan Zheng'} fontSize={70}>评委：{result.attributes.judge}</Heading>
+                    <Heading fontFamily={'Ma Shan Zheng'} fontSize={60} mb={5}>正方</Heading>
                 <TableContainer mb={10}>
                         <Table variant='striped' colorScheme='gray'>
     <TableCaption>正方</TableCaption>
@@ -69,7 +70,7 @@ function results({ results }) {
   </Table>
             </TableContainer>
             
-            <Heading fontFamily={'ZCOOL XiaoWei'} fontSize={60} mb={10}>反方</Heading>
+            <Heading fontFamily={'Ma Shan Zheng'} fontSize={60} mb={10}>反方</Heading>
             <TableContainer mb={10}>
   <Table variant='striped' colorScheme='gray'>
     <TableCaption>反方</TableCaption>
@@ -115,10 +116,19 @@ function results({ results }) {
     </Tbody>
   </Table>
                     </TableContainer>
-                    <Heading fontFamily={'ZCOOL XiaoWei'}>印象票：{result.attributes.bestImpression}</Heading>
-                    <Heading fontFamily={'ZCOOL XiaoWei'}>最佳辩手：{result.attributes.bestCand}</Heading>
-                    <Heading fontFamily={'ZCOOL XiaoWei'}>总结票：{result.attributes.bestSummary}</Heading>
-            </Flex>
+                    <Heading fontFamily={'Ma Shan Zheng'}>印象票：{result.attributes.bestImpression}</Heading>
+                    <Heading fontFamily={'Ma Shan Zheng'}>最佳辩手：{result.attributes.bestCand}</Heading>
+                    <Heading fontFamily={'Ma Shan Zheng'}>总结票：{result.attributes.bestSummary}</Heading>
+                    <hr
+        style={{
+          background: 'black',
+          color: 'black',
+        borderColor: 'black',
+          marginTop: '50px',
+          height: '3px',
+        }}
+      />
+                </Flex>
         )})
     )
 }
