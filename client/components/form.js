@@ -71,14 +71,15 @@ function Form({ information }) {
                 email: leaderEmail,
                 password: password,
                 username: leaderNameCN,
-                userRole: 'Participant'
+                userRole: 'Participant',
+                school: schoolNameCN
             }),
             headers: {
                 'Content-type': 'application/json'
             },
         })
         const data = await response.json()
-        console.log(data)
+        console.log("Sucessfully registered",data)
         setPassword('')
         setShowAlert(true)
         setTimeout(() => {

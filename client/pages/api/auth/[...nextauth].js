@@ -61,6 +61,7 @@ export const authOptions = {
                 token.id = user.id
                 token.name = user.username
                 token.role = user.userRole
+                token.school = user.school
             }
       
             return token;
@@ -71,6 +72,7 @@ export const authOptions = {
                   session.id = token.id
                   session.user.name = token.name
                   session.user.role = token.role
+                  session.user.school = token.school
             }
       
             return session;

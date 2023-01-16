@@ -63,11 +63,6 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "school": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::school.school"
-    },
     "userRole": {
       "type": "enumeration",
       "enum": [
@@ -75,6 +70,9 @@
         "Participant",
         "Committee"
       ]
+    },
+    "school": {
+      "type": "string"
     }
   }
 }
