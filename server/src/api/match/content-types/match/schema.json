@@ -26,6 +26,9 @@
     },
     "matchNo": {
       "type": "integer"
+    },
+    "matchTime": {
+      "type": "datetime"
     }
   }
 }

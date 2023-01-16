@@ -67,6 +67,14 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::school.school"
+    },
+    "userRole": {
+      "type": "enumeration",
+      "enum": [
+        "Judge",
+        "Participant",
+        "Committee"
+      ]
     }
   }
 }

@@ -1,0 +1,136 @@
+{
+  "kind": "collectionType",
+  "collectionName": "results",
+  "info": {
+    "singularName": "result",
+    "pluralName": "results",
+    "displayName": "result",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "teamA1Point": {
+      "type": "integer"
+    },
+    "teamB1Point": {
+      "type": "integer"
+    },
+    "teamA1LiLun": {
+      "type": "integer"
+    },
+    "teamA1ZhiXun": {
+      "type": "integer"
+    },
+    "teamA1DaBian": {
+      "type": "integer"
+    },
+    "teamA1YuYanFengDu": {
+      "type": "integer"
+    },
+    "teamA2BoLun": {
+      "type": "integer"
+    },
+    "teamA2ZhiXun": {
+      "type": "integer"
+    },
+    "teamA2YuYanFengDu": {
+      "type": "integer"
+    },
+    "teamA3ChenCi": {
+      "type": "integer"
+    },
+    "teamA3GongBian": {
+      "type": "integer"
+    },
+    "teamA3YuYanFengDu": {
+      "type": "integer"
+    },
+    "teamA4ZongJie": {
+      "type": "integer"
+    },
+    "teamA2Point": {
+      "type": "integer"
+    },
+    "teamA3Point": {
+      "type": "integer"
+    },
+    "teamA4Point": {
+      "type": "integer"
+    },
+    "teamB2Point": {
+      "type": "integer"
+    },
+    "teamB3Point": {
+      "type": "integer"
+    },
+    "teamB4Point": {
+      "type": "integer"
+    },
+    "teamB1LiLun": {
+      "type": "integer"
+    },
+    "teamB1ZhiXun": {
+      "type": "integer"
+    },
+    "teamB1DaBian": {
+      "type": "integer"
+    },
+    "teamB1YuYanFengDu": {
+      "type": "integer"
+    },
+    "teamB2BoLun": {
+      "type": "integer"
+    },
+    "teamB2YuYanFengDu": {
+      "type": "integer"
+    },
+    "teamB3ChenCi": {
+      "type": "integer"
+    },
+    "teamB3GongBian": {
+      "type": "integer"
+    },
+    "teamB3YuYanFengDu": {
+      "type": "integer"
+    },
+    "teamB4ZongJie": {
+      "type": "integer"
+    },
+    "teamB4YuYanFengDu": {
+      "type": "integer"
+    },
+    "teamA": {
+      "type": "string"
+    },
+    "teamB": {
+      "type": "string"
+    },
+    "teamA4YuYanFengDu": {
+      "type": "integer"
+    },
+    "teamATotalPoint": {
+      "type": "integer"
+    },
+    "teamBTotalPoint": {
+      "type": "integer"
+    },
+    "bestCand": {
+      "type": "string"
+    },
+    "bestImpression": {
+      "type": "string"
+    },
+    "bestSummary": {
+      "type": "string"
+    },
+    "judge": {
+      "type": "string"
+    },
+    "teamB2ZhiXun": {
+      "type": "integer"
+    }
+  }
+}

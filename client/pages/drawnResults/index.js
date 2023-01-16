@@ -6,17 +6,17 @@ import DrawnResultsArea from '../../components/drawnResultsArea'
 import CountriesName from '../../public/country.json'
 import results from '../../public/drawnResults.json'
 
-// const fetcher = async () => {
-//     const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}drawn-results`)
-//     const res = await response.json()
-//     const { data } = res
-//     return data
-// }
+const fetcher = async () => {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}drawn-results`)
+    const res = await response.json()
+    const { data } = res
+    return data
+}
 
 function DrawnResults() {
     const { Countries } = CountriesName
-    // const { data, error } = useSWR(`drawnResults`, fetcher)
-    const {data} = results
+    const { data, error } = useSWR(`drawnResults`, fetcher)
+    // const {data} = results
     if (!data) 
         return <></>
     

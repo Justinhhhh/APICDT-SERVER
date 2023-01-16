@@ -41,7 +41,7 @@ function NavBar() {
           (
             <Flex align={'center'} justify='space-between' h='100%' pr={5} fontSize={'18px'}>
         
-        <Link href="/participantsHome" passHref>
+        <Link href="/userHome" passHref>
         <Flex ml={5} _hover={{color: 'white'}}>主页</Flex>
           </Link>
 
@@ -74,8 +74,8 @@ function NavBar() {
           ) : (role === 'Committee' ?
             (
               <Flex align={'center'} justify='space-between' h='100%' pr={5}>
-              <Link href="#" passHref>
-                  <Flex ml={5} _hover={{color: 'white'}}>添加最新消息</Flex>
+              <Link href="/userHome" passHref>
+                  <Flex ml={5} _hover={{color: 'white'}}>消息栏</Flex>
           </Link>
           <Link href="/results1331" passHref>
                   <Flex ml={5} _hover={{color: 'white'}}>比赛结果</Flex>

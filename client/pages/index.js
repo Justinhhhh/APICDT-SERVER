@@ -14,13 +14,13 @@ export default function Home() {
   useEffect(() => {
     if (status != 'loading' && session) {
       if (session.user.role === 'Committee') {
-        router.push('/results1331')
+        router.push('/userHome')
       }
       else if (session.user.role === 'Judge') {
         router.push('/matches')
       }
       else if (session.user.role === 'Participant') {
-        router.push('/participantsHome')
+        router.push('/userHome')
       }
     }
   }, [session, status])

@@ -6,8 +6,8 @@ import "@fontsource/zcool-xiaowei"
 import committee from "../public/committees.json"
 
 function About({ committees }) {
-    // const { data } = committees
-    const { data } = committee
+    const { data } = committees
+    // const { data } = committee
     return (
         <Box fontFamily={"ZCOOL XiaoWei"} className={styles.body}>
             <Flex justify='center'><Heading pl={20} pt={20} fontFamily={"ZCOOL XiaoWei"} fontSize={72} color="#fcffea">关于我们</Heading></Flex>
@@ -26,17 +26,17 @@ function About({ committees }) {
 
 export default About;
 
-// export async function getStaticProps() {
-//     const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}committees?populate[0]=picture`, {
-//         method: 'GET',
-//         headers: {
-//             'Content-type': 'application/json'
-//         }
-//     })
-//     const data = await response.json()
-//     return {
-//         props: {
-//             committees: data
-//         }
-//     }
-// }
+export async function getStaticProps() {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}committees?populate[0]=picture`, {
+        method: 'GET',
+        headers: {
+            'Content-type': 'application/json'
+        }
+    })
+    const data = await response.json()
+    return {
+        props: {
+            committees: data
+        }
+    }
+}

@@ -2,6 +2,8 @@ import { useRouter } from "next/router";
 import GradeImpression from "../../components/gradeImpression";
 import { Flex, Heading } from "@chakra-ui/react";
 import "@fontsource/zcool-xiaowei"
+import { unstable_getServerSession } from "next-auth";
+import { authOptions } from "../api/auth/[...nextauth]";
 
 function Team({ resultsID }) {
     if (resultsID) {
@@ -19,6 +21,16 @@ function Team({ resultsID }) {
 export default Team;
 
 export async function getServerSideProps(context) {
+    const session = await unstable_getServerSession(context.req, context.res, authOptions)
+    
+    if (!session || session.user.role != 'Judge') {
+        return {
+            redirect: {
+                destination: '/login',
+                permanent: true,
+            }
+        }
+    }
     const { id } = context.params
     return {
         props: {

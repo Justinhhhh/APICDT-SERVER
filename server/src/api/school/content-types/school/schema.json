@@ -12,10 +12,10 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "schoolName": {
+    "schoolNameEN": {
       "type": "string"
     },
-    "leaderEnglishName": {
+    "leaderNameEN": {
       "type": "string"
     },
     "leaderEmail": {
@@ -26,11 +26,20 @@
       "relation": "oneToOne",
       "target": "api::drawn-result.drawn-result"
     },
-    "leaderChineseName": {
+    "leaderNameCN": {
       "type": "string"
     },
-    "leaderPhoneNumber": {
+    "leaderPhone": {
       "type": "biginteger"
+    },
+    "schoolNameCN": {
+      "type": "string"
+    },
+    "topic1": {
+      "type": "string"
+    },
+    "topic2": {
+      "type": "string"
     }
   }
 }
