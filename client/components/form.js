@@ -36,20 +36,25 @@ function Form({ information }) {
     const handleSubmit = async (e) => {
         e.preventDefault()
     
-        // const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}schools`, {
-        //     method: 'POST',
-        //     body: JSON.stringify({
-        //         data: {
-        //             schoolName: schoolName,
-        //             leaderName: leaderName,
-        //             leaderEmail: leaderEmail,
-        //         }
-        //     }),
-        //     headers: {
-        //         'Content-type': 'application/json'
-        //     },
-        // })
-        // const data = await response.json()
+        const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}schools`, {
+            method: 'POST',
+            body: JSON.stringify({
+                data: {
+                    schoolNameCN: schoolNameCN,
+                    schoolNameEN: schoolNameEN,
+                    leaderNameCN: leaderNameCN,
+                    leaderNameEN: leaderNameEN,
+                    topic1: topic1,
+                    topic2: topic2,
+                    leaderEmail: leaderEmail,
+                    leaderPhone: leaderPhone
+                }
+            }),
+            headers: {
+                'Content-type': 'application/json'
+            },
+        })
+        const data = await response.json()
         setSubmitted(true)
     }
 
@@ -60,24 +65,26 @@ function Form({ information }) {
     const handlePasswordSubmit = async (e) => {
         e.preventDefault()
     
-        // const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}auth/local/register`, {
-        //     method: 'POST',
-        //     body: JSON.stringify({
-        //         email: leaderEmail,
-        //         password: password,
-        //         username: leaderName
-        //     }),
-        //     headers: {
-        //         'Content-type': 'application/json'
-        //     },
-        // })
-        // const data = await response.json()
-        // console.log(data)
+        const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}auth/local/register`, {
+            method: 'POST',
+            body: JSON.stringify({
+                email: leaderEmail,
+                password: password,
+                username: leaderNameCN,
+                userRole: 'Participant'
+            }),
+            headers: {
+                'Content-type': 'application/json'
+            },
+        })
+        const data = await response.json()
+        console.log(data)
         setPassword('')
         setShowAlert(true)
         setTimeout(() => {
             setShowAlert(false)
-        }, 5000)
+            router.push('/')
+        }, 3000)
     }
 
     return (

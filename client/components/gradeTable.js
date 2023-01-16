@@ -23,8 +23,8 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 
 
-function GradeTable({ teamA, teamB }) {
-    const router = useRouter()
+function GradeTable({ teamA, teamB, judgeName }) {
+  const router = useRouter()
     const [pointA, setPointA] = useState(0)
     const [pointB, setPointB] = useState(0)
     const [pointC, setPointC] = useState(0)
@@ -58,69 +58,69 @@ function GradeTable({ teamA, teamB }) {
     const sixthPoint = pointB2 + pointF2 + pointJ2
     const seventhPoint = pointC2 + pointG2 + pointK2
     const eighthPoint = pointD2 + pointL2
-    const judge = "陈铭"
     
     const handleSubmit = async (e) => {
         e.preventDefault()
-        // const response = await fetch(`http://localhost:1337/api/results`, {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify({
-        //         data: {
-        //             teamA: teamA,
-        //             teamB: teamB,
-        //             teamA1Point: firstPoint,
-        //             teamA2Point: secondPoint,
-        //             teamA3Point: thirdPoint,
-        //             teamA4Point: fourthPoint,
-        //             teamB1Point: fifthPoint,
-        //             teamB2Point: sixthPoint,
-        //             teamB3Point: seventhPoint,
-        //             teamB4Point: eighthPoint,
-        //             teamA1LiLun: pointA,
-        //             teamA1ZhiXun: pointE,
-        //             teamA1DaBian: pointH,
-        //             teamA1YuYanFengDu: pointI,
-        //             teamA2BoLun: pointB,
-        //             teamA2ZhiXun: pointF,
-        //             teamA2YuYanFengDu: pointJ,
-        //             teamA3ChenCi: pointC,
-        //             teamA3GongBian: pointG,
-        //             teamA3YuYanFengDu: pointK,
-        //             teamA4ZongJie: pointD,
-        //             teamA4YuYanFengDu: pointL,
-        //             teamB1LiLun: pointA2,
-        //             teamB1ZhiXun: pointE2,
-        //             teamB1DaBian: pointH2,
-        //             teamB1YuYanFengDu: pointI2,
-        //             teamB2BoLun: pointB2,
-        //             teamB2ZhiXun: pointF2,
-        //             teamB2YuYanFengDu: pointJ2,
-        //             teamB3ChenCi: pointC2,
-        //             teamB3GongBian: pointG2,
-        //             teamB3YuYanFengDu: pointK2,
-        //             teamB4ZongJie: pointD2,
-        //             teamB4YuYanFengDu: pointL2,
-        //             teamATotalPoint: firstPoint + secondPoint + thirdPoint + fourthPoint,
-        //             teamBTotalPoint: fifthPoint + sixthPoint + seventhPoint + eighthPoint,
-        //             judge: judge
-        //         }
-        //     })
-        // })
-        // const responseID = await fetch(`http://localhost:1337/api/results?filters[teamA][$eq]=${teamA}&filters[teamB][$eq]=${teamB}&filters[judge][$eq]=${judge}`, {
-        //     method: 'GET',
-        //     headers: {
-        //         'Content-type': 'application/json'
-        //     }
-        // })
-        // const res = await responseID.json()
-        // const { data } = res
-        // const id = data[0].id
-        // console.log(id)
-        // router.replace(`http://localhost:3000/gradeImpression/${id}`)
-        router.replace(`http://apicdt.vercel.app/gradeImpression/1`)
+        const response = await fetch(`http://localhost:1337/api/results`, {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                data: {
+                    teamA: teamA,
+                    teamB: teamB,
+                    teamA1Point: firstPoint,
+                    teamA2Point: secondPoint,
+                    teamA3Point: thirdPoint,
+                    teamA4Point: fourthPoint,
+                    teamB1Point: fifthPoint,
+                    teamB2Point: sixthPoint,
+                    teamB3Point: seventhPoint,
+                    teamB4Point: eighthPoint,
+                    teamA1LiLun: pointA,
+                    teamA1ZhiXun: pointE,
+                    teamA1DaBian: pointH,
+                    teamA1YuYanFengDu: pointI,
+                    teamA2BoLun: pointB,
+                    teamA2ZhiXun: pointF,
+                    teamA2YuYanFengDu: pointJ,
+                    teamA3ChenCi: pointC,
+                    teamA3GongBian: pointG,
+                    teamA3YuYanFengDu: pointK,
+                    teamA4ZongJie: pointD,
+                    teamA4YuYanFengDu: pointL,
+                    teamB1LiLun: pointA2,
+                    teamB1ZhiXun: pointE2,
+                    teamB1DaBian: pointH2,
+                    teamB1YuYanFengDu: pointI2,
+                    teamB2BoLun: pointB2,
+                    teamB2ZhiXun: pointF2,
+                    teamB2YuYanFengDu: pointJ2,
+                    teamB3ChenCi: pointC2,
+                    teamB3GongBian: pointG2,
+                    teamB3YuYanFengDu: pointK2,
+                    teamB4ZongJie: pointD2,
+                    teamB4YuYanFengDu: pointL2,
+                    teamATotalPoint: firstPoint + secondPoint + thirdPoint + fourthPoint,
+                    teamBTotalPoint: fifthPoint + sixthPoint + seventhPoint + eighthPoint,
+                    judge: judgeName
+                }
+            })
+        })
+        const responseID = await fetch(`http://localhost:1337/api/results?filters[teamA][$eq]=${teamA}&filters[teamB][$eq]=${teamB}&filters[judge][$eq]=${judgeName}`, {
+            method: 'GET',
+            headers: {
+                'Content-type': 'application/json'
+            }
+        })
+        const res = await responseID.json()
+        const { data } = res
+        const id = data[0].id
+        console.log(id)
+        router.replace(`http://localhost:3000/gradeImpression/${id}`)
+        // router.replace(`http://localhost:3000/gradeImpression/1`)
+        // router.replace(`http://apicdt.vercel.app/gradeImpression/1`)
     }
     return (
         < Flex mt = { 20} fontFamily = { 'ZCOOL XiaoWei'} align = { 'center'} flexDir = { 'column'} >

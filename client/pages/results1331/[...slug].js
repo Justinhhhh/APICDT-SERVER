@@ -15,8 +15,8 @@ import "@fontsource/ma-shan-zheng"
 import result from '../../public/results.json'
 
 function results({ results }) {
-    // const { data } = results
-    const { data } = result
+    const { data } = results
+    // const { data } = result
     console.log(data)
     return (
         data.map(result => {
@@ -38,7 +38,7 @@ function results({ results }) {
     <Tbody>
       <Tr>
         <Td>立论（30分）：{result.attributes.teamA1LiLun}</Td>
-        <Td>驳论（30分）：{result.attributes.teamA2BoBian}</Td>
+        <Td>驳论（30分）：{result.attributes.teamA2BoLun}</Td>
         <Td>陈词（30分）：{result.attributes.teamA3ChenCi}</Td>
         <Td>总结（60分）：{result.attributes.teamA4ZongJie}</Td>
       </Tr>
@@ -85,7 +85,7 @@ function results({ results }) {
     <Tbody>
       <Tr>
         <Td>立论（30分）：{result.attributes.teamB1LiLun}</Td>
-        <Td>驳论（30分）：{result.attributes.teamB2BoBian}</Td>
+        <Td>驳论（30分）：{result.attributes.teamB2BoLun}</Td>
         <Td>陈词（30分）：{result.attributes.teamB3ChenCi}</Td>
         <Td>总结（60分）：{result.attributes.teamB4ZongJie}</Td>
       </Tr>
@@ -135,18 +135,18 @@ function results({ results }) {
 
 export default results;
 
-// export async function getServerSideProps(context) {
-//     const { slug } = context.params
-//     const response = await fetch(`http://localhost:1337/api/results?filters[teamA][$eq]=${slug[0]}&filters[teamB][$eq]=${slug[1]}`, {
-//         method: 'GET',
-//         headers: {
-//             'Content-type': 'application/json'
-//         }
-//     })
-//     const data = await response.json()
-//     return {
-//         props: {
-//             results: data
-//         }
-//     }
-// }
+export async function getServerSideProps(context) {
+    const { slug } = context.params
+    const response = await fetch(`http://localhost:1337/api/results?filters[teamA][$eq]=${slug[0]}&filters[teamB][$eq]=${slug[1]}`, {
+        method: 'GET',
+        headers: {
+            'Content-type': 'application/json'
+        }
+    })
+    const data = await response.json()
+    return {
+        props: {
+            results: data
+        }
+    }
+}

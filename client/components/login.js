@@ -5,6 +5,7 @@ import { Router } from "next/router";
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import "@fontsource/zcool-xiaowei"
+import { getSession } from "next-auth/react";
 
 function Login() {
     const router = useRouter()
@@ -12,14 +13,17 @@ function Login() {
     const [password, setPassword] = useState()
 
     const handleSubmit = async (e) => {
-        e.preventDefault()
+        // e.preventDefault()
         const res = await signIn('credentials', {
             redirect: false,
             email: email,
             password: password,
-            callbackUrl: `http://localhost:3000/participantsHome`,
+            callbackUrl: `http://localhost:3000/`
         })
-        // console.log(res)
+
+        // const getRole = await getRoles()
+        // console.log(role)
+        console.log(res)
 
         if (res?.error) {
             console.log(res.error)

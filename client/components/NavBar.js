@@ -4,39 +4,27 @@ import {
 } from '@chakra-ui/react'
 import "@fontsource/zcool-qingke-huangyou"
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { useSession, signOut } from 'next-auth/react'
 
 function NavBar() {
   const [drawn, setDrawn] = useState(true)
-  const [role, setRole] = useState()
-  const [partView, setPartView] = useState(false)
-  const [judgeView, setJudgeView] = useState(false)
-  const [committeeView, setCommitteeView] = useState(false)
+  const [role, setRole] = useState("")
 
   const { data: session, status } = useSession()
   const router = useRouter()
-  if (session === undefined) {
-    return (
-      <h1>Loading...</h1>
-    )
-  }
+  useEffect(() => {
+    if (session && status != 'loading') {
+      setRole(session.user.role)
+    }
+  }, [session, status])
 
-  // const getRoles = async () => {
-  //   const response = await fetch('api/roles', {
-  //     method: 'GET',
-  //   })
-  //   const res = await response.json()
-  //   const { data } = res
-  //   setRole(data[0].attributes.role)
-  // }
-
-  // if (session)
-  //   getRoles()
-
-  const handleSignOut = async () => {
-    const data = await signOut({ redirect: true, callbackUrl: `https://apicdt.vercel.app` })
+  const handleSignOut = async (e) => {
+    e.preventDefault()
+    console.log('hi')
+    const data = await signOut({ redirect: true, callbackUrl: `http://localhost:3000` })
+    setRole("")
     if (data) {
       router.push(data.url)
     }
@@ -49,7 +37,7 @@ function NavBar() {
         亚太辩论
       </Link>
       </Flex>
-      {partView ?
+      {role === 'Participant' ?
           (
             <Flex align={'center'} justify='space-between' h='100%' pr={5} fontSize={'18px'}>
         
@@ -70,20 +58,20 @@ function NavBar() {
             </Link>
             
             <Link href="/" passHref>
-          <Flex ml={5} _hover={{ color: 'white', cursor: 'pointer' }} onClick={() => setPartView(false)}>登出</Flex>
+          <Flex ml={5} _hover={{ color: 'white', cursor: 'pointer' }} onClick={handleSignOut}>登出</Flex>
           </Link>
           </Flex>
-        ) : (judgeView ?
+        ) : (role === 'Judge' ?
           (
             <Flex align={'center'} justify='space-between' h='100%' pr={5} fontSize={'18px'}>
           <Link href="/matches" passHref>
         <Flex ml={5} _hover={{color: 'white'}}>评分表</Flex>
             </Link>
             <Link href="/" passHref>
-            <Flex ml={5} _hover={{ color: 'white', cursor: 'pointer' }} onClick={() => setJudgeView(false)}>登出</Flex>
+            <Flex ml={5} _hover={{ color: 'white', cursor: 'pointer' }} onClick={handleSignOut}>登出</Flex>
               </Link>
               </Flex>
-          ) : (committeeView ?
+          ) : (role === 'Committee' ?
             (
               <Flex align={'center'} justify='space-between' h='100%' pr={5}>
               <Link href="#" passHref>
@@ -93,7 +81,7 @@ function NavBar() {
                   <Flex ml={5} _hover={{color: 'white'}}>比赛结果</Flex>
                 </Link>
                 <Link href="/" passHref>
-            <Flex ml={5} _hover={{ color: 'white', cursor: 'pointer' }} onClick={() => setCommitteeView(false)}>登出</Flex>
+            <Flex ml={5} _hover={{ color: 'white', cursor: 'pointer' }} onClick={handleSignOut}>登出</Flex>
               </Link>
                 </Flex>
             ) : (
@@ -110,17 +98,9 @@ function NavBar() {
               <Flex ml={5} _hover={{color: 'white'}}>选手报名</Flex>
                 </Link>
                 
-                <Link href="/participantsHome" passHref>
-              <Flex ml={5} _hover={{color: 'white'}} onClick={() => setPartView(true)}>选手视角</Flex>
+                <Link href="/login" passHref>
+              <Flex ml={5} _hover={{color: 'white'}}>登录</Flex>
                 </Link>
-                
-                <Link href="/matches" passHref>
-              <Flex ml={5} _hover={{color: 'white'}} onClick={() => setJudgeView(true)}>评审视角</Flex>
-                </Link>
-                
-                <Link href="/results1331" passHref>
-              <Flex ml={5} _hover={{color: 'white'}} onClick={() => setCommitteeView(true)}>竞赛组视角</Flex>
-            </Link>
         
             <Link href="/about" passHref>
             <Flex ml={5} _hover={{color: 'white'}}>关于我们</Flex>

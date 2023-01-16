@@ -11,7 +11,7 @@ import {
 function AlertDialog({ status, description }) {
     return (
         <Flex justifyContent={'center'}>
-            <Alert status={status} w={'50vw'}>
+            <Alert status={status} w={'50vw'} color='black'>
                 <AlertIcon />
                 <AlertTitle>{status}</AlertTitle>
                 <AlertDescription>{description}</AlertDescription>

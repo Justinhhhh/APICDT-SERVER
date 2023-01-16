@@ -20,7 +20,7 @@ function GradeImpression({ resultsID }) {
         else {
             setIsAClicked(true)
             setIsBClicked(false)
-            setTeamWon("teamA")
+            setTeamWon("正方")
         }
     }
 
@@ -33,26 +33,26 @@ function GradeImpression({ resultsID }) {
         else {
             setIsAClicked(false)
             setIsBClicked(true)
-            setTeamWon("teamB")
+            setTeamWon("反方")
         }
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        router.replace(`http://apicdt.vercel.app/gradeBestCand/1`)
-        // router.replace(`http://localhost:3000/gradeBestCand/${resultsID}`)
-        // const response = await fetch(`http://localhost:1337/api/results/${resultsID}`, {
-        //     method: 'PUT',
-        //     headers: {
-        //         'Content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify({
-        //         data: {
-        //             bestImpression: teamWon
-        //         }
-        //     })
-        // })
-        // const data = await response.json()
+        // router.replace(`http://apicdt.vercel.app/gradeBestCand/1`)
+        router.replace(`http://localhost:3000/gradeBestCand/${resultsID}`)
+        const response = await fetch(`http://localhost:1337/api/results/${resultsID}`, {
+            method: 'PUT',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                data: {
+                    bestImpression: teamWon
+                }
+            })
+        })
+        const data = await response.json()
     }
     return (
         <Flex mt={20} fontFamily={'ZCOOL XiaoWei'} align={'center'} flexDir={'column'}>

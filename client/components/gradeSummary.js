@@ -20,7 +20,7 @@ function GradeSummary({ resultsID }) {
         else {
             setIsAClicked(true)
             setIsBClicked(false)
-            setTeamWon("teamA")
+            setTeamWon("正方")
         }
     }
 
@@ -33,24 +33,24 @@ function GradeSummary({ resultsID }) {
         else {
             setIsAClicked(false)
             setIsBClicked(true)
-            setTeamWon("teamB")
+            setTeamWon("反方")
         }
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         setShowSuccessAlert(true)
-        // const response = await fetch(`http://localhost:1337/api/results/${resultsID}`, {
-        //     method: 'PUT',
-        //     headers: {
-        //         'Content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify({
-        //         data: {
-        //             bestSummary: teamWon
-        //         }
-        //     })
-        // })
+        const response = await fetch(`http://localhost:1337/api/results/${resultsID}`, {
+            method: 'PUT',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                data: {
+                    bestSummary: teamWon
+                }
+            })
+        })
         setTimeout(() => {
             setShowSuccessAlert(false)
             router.push(`/matches`)

@@ -3,8 +3,34 @@ import Header from '../components/header'
 import Timelines from '../components/Timelines'
 import logo from '../public/Logo2023.jpeg'
 import styles from '../styles/Home.module.css'
+import { useSession } from 'next-auth/react'
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 
 export default function Home() {
+  const { data: session, status } = useSession()
+  const router = useRouter()
+  console.log(session, status)
+  useEffect(() => {
+    if (status != 'loading' && session) {
+      if (session.user.role === 'Committee') {
+        router.push('/results1331')
+      }
+      else if (session.user.role === 'Judge') {
+        router.push('/matches')
+      }
+      else if (session.user.role === 'Participant') {
+        router.push('/participantsHome')
+      }
+    }
+  }, [session, status])
+
+  if (status === 'loadng') {
+    return (
+      <div>Loading...</div>
+    )
+  }
+  
   return (
     <div>
       <Head>
