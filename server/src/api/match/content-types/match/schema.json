@@ -24,11 +24,11 @@
     "time": {
       "type": "time"
     },
-    "matchNo": {
-      "type": "integer"
-    },
     "matchTime": {
       "type": "datetime"
+    },
+    "matchType": {
+      "type": "string"
     }
   }
 }

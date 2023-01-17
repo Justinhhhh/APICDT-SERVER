@@ -4,8 +4,9 @@ import styles from '../styles/announcement.module.css'
 import { useEffect, useState } from "react";
 import moment from 'moment'
 import { useSession } from "next-auth/react";
-import { DeleteIcon, AddIcon } from "@chakra-ui/icons"
+import { DeleteIcon, AddIcon, EditIcon } from "@chakra-ui/icons"
 import { useRouter } from "next/router";
+import Loading from "../pages/loading";
 
 function Announcement({ announcement }) {
     const [role, setRole] = useState()
@@ -18,6 +19,10 @@ function Announcement({ announcement }) {
             setRole(session.user.role)
         }
     }, [session, status])
+
+    if (status === 'loading') {
+        <Loading/>
+    }
 
 
 
@@ -42,12 +47,20 @@ function Announcement({ announcement }) {
                                 {/* <Text color='#dedede' >{` ${ann.attributes.publishedAt}`}</Text> */}
                         </CardBody>
                         </Card>
-                            {role === 'Committee' ? <Button onClick={async() => {
+                            {role === 'Committee' ?
+                                <Flex flexDir={'column'} h='100' justify={'space-between'}>
+                                    <Button onClick={async () => {
+                                        router.push(`/editNews/${ann.id}`)
+                                    }}><EditIcon />
+                                    </Button>
+                                    <Button onClick={async () => {
                                 const response = await fetch(`http://localhost:1337/api/announcements/${ann.id}`, {
                                     method: 'DELETE'
                                 })
                                 router.reload()
-                            }}><DeleteIcon /></Button> : <Box />}
+                                    }}><DeleteIcon />
+                                    </Button>
+                                </Flex> : <Box />}
                             </Flex>
                     )
                 

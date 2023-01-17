@@ -8,6 +8,7 @@ import AlertDialog from '../components/alert'
 import { useSession, signIn, signOut } from 'next-auth/react'
 import countries from '../public/country.json'
 import moment from 'moment'
+import Loading from './loading'
 
 function Starwars({ initialTime }) {
     const { data: session } = useSession()
@@ -30,13 +31,13 @@ function Starwars({ initialTime }) {
 
     if (!date) {
         return (
-            <h1>Loading...</h1>
+            <Loading/>
         )
     }
 
     if (!session) 
         return (
-            <h1>Loading...</h1>
+            <Loading/>
         )
     const email = session.user.email
 

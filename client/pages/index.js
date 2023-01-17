@@ -6,6 +6,7 @@ import styles from '../styles/Home.module.css'
 import { useSession } from 'next-auth/react'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
+import Loading from './loading'
 
 export default function Home() {
   const { data: session, status } = useSession()
@@ -25,9 +26,9 @@ export default function Home() {
     }
   }, [session, status])
 
-  if (status === 'loadng') {
+  if (status === 'loading' && session) {
     return (
-      <div>Loading...</div>
+      <Loading/>
     )
   }
   

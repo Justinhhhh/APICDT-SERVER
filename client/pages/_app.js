@@ -9,9 +9,9 @@ function MyApp({ Component, pageProps }) {
     <SessionProvider session={pageProps.session}>
     <ChakraProvider>
       <NavBar/>
-      <Component {...pageProps} />
+        <Component {...pageProps} />
     <Footer/>
-      </ChakraProvider>
+        </ChakraProvider>
       </SessionProvider>
   )
 }

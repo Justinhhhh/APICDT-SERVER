@@ -76,7 +76,10 @@ function NavBar() {
               <Flex align={'center'} justify='space-between' h='100%' pr={5}>
               <Link href="/userHome" passHref>
                   <Flex ml={5} _hover={{color: 'white'}}>消息栏</Flex>
-          </Link>
+                </Link>
+                <Link href="/adminMatch" passHref>
+                  <Flex ml={5} _hover={{color: 'white'}}>比赛</Flex>
+                </Link>
           <Link href="/results1331" passHref>
                   <Flex ml={5} _hover={{color: 'white'}}>比赛结果</Flex>
                 </Link>
