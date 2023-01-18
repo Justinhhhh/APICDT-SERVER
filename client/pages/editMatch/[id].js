@@ -15,6 +15,8 @@ function EditNews({ match, schoolS }) {
     const [teamB, setTeamB] = useState(data.attributes.teamB)
     const [matchType, setMatchType] = useState(data.attributes.matchType)
     const [datetime, setDatetime] = useState(data.attributes.matchTime)
+    const [aTopic, setATopic] = useState(data.attributes.aTopic)
+    const [bTopic, setBTopic] = useState(data.attributes.bTopic)
     const router = useRouter()
 
     const handleSubmit = async (e) => {
@@ -26,7 +28,9 @@ function EditNews({ match, schoolS }) {
                     teamA: teamA,
                     teamB: teamB,
                     matchType: matchType,
-                    matchTime: datetime
+                    matchTime: datetime,
+                    aTopic: aTopic,
+                    bTopic: bTopic
                 }
             }),
             headers: {
@@ -44,7 +48,7 @@ function EditNews({ match, schoolS }) {
 
     return (
         <Box h='92vh' pt={100} pl={100} fontFamily={"ZCOOL XiaoWei"} >
-            <Heading fontSize='60px' fontFamily={"ZCOOL XiaoWei"}>更改消息</Heading>
+            <Heading fontSize='60px' fontFamily={"ZCOOL XiaoWei"}>更改比赛</Heading>
             <FormControl>
             <Flex flexDir={'row'} mt='59px' mb='10px' fontWeight={'500px'}>
                     <Flex flexDirection='column' mb='15px'>
@@ -68,10 +72,20 @@ function EditNews({ match, schoolS }) {
                         </Select>
                     </Flex>
                 </Flex>
+                <Flex flexDir={'row'} mt='59px' mb='10px' fontWeight={'500px'}>
+                    <Flex flexDirection='column' mb='15px' mr={'10'}>
+                    <FormLabel>正方辩题</FormLabel>
+                    <Input w={'280px'} borderColor="black" placeholder="正方辩题" value={aTopic} onChange={(e) => setATopic(e.target.value)} required type='text'/>
+                    </Flex>
+                    <Flex flexDirection='column'>
+                    <FormLabel>反方辩题</FormLabel>
+                        <Input w={'280px'} borderColor="black" placeholder="反方辩题" value={bTopic} onChange={(e) => setBTopic(e.target.value)} required type='text'/>
+                    </Flex>
+                </Flex>
                 <Flex flexDir={'row'} mt='30px' mb='29px' fontWeight={'500px'}>
                 <Flex flexDir={'column'} w={'280px'}>
                     <FormLabel>时间</FormLabel>
-                    <DatePicker showTime onOk={onOk} size={'large'} width={'100'} placeholder="比赛时间" />
+                    <DatePicker showTime onOk={onOk} onChange={onOk} size={'large'} width={'100'} placeholder="比赛时间" />
                     </Flex>
                     <Flex flexDir={'column'} w={'280px'} ml='10'>
                     <FormLabel>比赛项目</FormLabel>

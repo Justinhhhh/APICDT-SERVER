@@ -17,6 +17,9 @@
     },
     "bTopic": {
       "type": "string"
+    },
+    "matchType": {
+      "type": "string"
     }
   }
 }

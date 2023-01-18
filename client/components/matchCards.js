@@ -8,8 +8,9 @@ function MatchCards({ matches }) {
             <Heading fontFamily={'Ma Shan Zheng'} ml={20} mt={20} fontSize={48}>比赛</Heading>
         <Flex align='center' flexDirection='column'>
                 {matches.map(match => {
+                    console.log("Hello",match.attributes.aTopic)
                 return (
-                    <MatchCard key={match.id} id={match.id} matchType={match.attributes.matchType} teamA={match.attributes.teamA} teamB={match.attributes.teamB} matchTime={match.attributes.matchTime} />
+                    <MatchCard key={match.id} aTopic={match.attributes.aTopic} bTopic={match.attributes.bTopic} id={match.id} matchType={match.attributes.matchType} teamA={match.attributes.teamA} teamB={match.attributes.teamB} matchTime={match.attributes.matchTime} />
                 )
             })}
             </Flex>

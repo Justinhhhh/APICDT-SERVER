@@ -19,7 +19,7 @@ function AdminMatch({matches}) {
                 {data.map(match => {
                     return (
                         
-                    <MatchCard key={match.id} id={match.id} matchType={match.attributes.matchType} teamA={match.attributes.teamA} teamB={match.attributes.teamB} matchTime={match.attributes.matchTime} />
+                    <MatchCard key={match.id} aTopic={match.attributes.aTopic} bTopic={match.attributes.bTopic} id={match.id} matchType={match.attributes.matchType} teamA={match.attributes.teamA} teamB={match.attributes.teamB} matchTime={match.attributes.matchTime} />
                             )
             })}
             </Flex>

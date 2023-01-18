@@ -18,16 +18,16 @@
     "teamB": {
       "type": "string"
     },
-    "date": {
-      "type": "date"
-    },
-    "time": {
-      "type": "time"
-    },
     "matchTime": {
       "type": "datetime"
     },
     "matchType": {
+      "type": "string"
+    },
+    "aTopic": {
+      "type": "string"
+    },
+    "bTopic": {
       "type": "string"
     }
   }
