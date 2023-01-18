@@ -1,11 +1,13 @@
 const path = require('path');
+const parse = require('pg-connection-string').parse
 
 module.exports = ({ env }) => ({
-  connection: {
-    client: 'sqlite',
     connection: {
-      filename: path.join(__dirname, '..', env('DATABASE_FILENAME', '.tmp/data.db')),
+      client: 'sqlite',
+      connection: {
+        filename: path.join(__dirname, '..', env('DATABASE_FILENAME', '.tmp/data.db')),
+      },
+      useNullAsDefault: true,
     },
-    useNullAsDefault: true,
-  },
-});
+  }
+);
