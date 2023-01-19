@@ -7,8 +7,10 @@ import { useSession } from 'next-auth/react'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Loading from './loading'
-
-export default function Home() {
+import Rankings from '../components/Rankings'
+export default function Home(rankings) {
+  console.log(rankings)
+  const data = rankings
   const { data: session, status } = useSession()
   const router = useRouter()
   console.log(session, status)
@@ -42,8 +44,23 @@ export default function Home() {
 
       <div>
         <Header image={logo} title="第十一届亚太大专华语辩论公开赛"/>
-        <Timelines />
+        <Timelines  />
+        <Rankings ranking={data}/>
       </div>
     </div>
   )
+}
+export async function getServerSideProps(context) {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}rankings`, {
+      method: 'GET',
+      headers: {
+          'Content-type': 'application/json'
+      }
+  })
+  const data = await response.json()
+  return {
+      props: {
+          rankings: data
+      }
+  }
 }
