@@ -1,11 +1,18 @@
 import MatchCards from "../components/matchCards";
 import match from "../public/matches.json"
-
+import Loading from './loading'
+import { useSession } from "next-auth/react";
 function Matches({ matches }) {
+    const {data:session}  = useSession({ required: true })
     const { data } = matches 
     // const { data } = match
+    if (!session) 
+        return (
+            <Loading/>
+        )
+    const school = session.user.school
     return ( 
-        <MatchCards matches={data} />
+        <MatchCards matches={data} schools={school}/>
      );
 }
 
