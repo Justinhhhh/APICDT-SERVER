@@ -8,9 +8,9 @@ import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Loading from './loading'
 import Rankings from '../components/Rankings'
-export default function Home(rankings) {
-  console.log(rankings)
-  const data = rankings
+
+export default function Home({ rankings }) {
+  const res = rankings
   const { data: session, status } = useSession()
   const router = useRouter()
   console.log(session, status)
@@ -45,22 +45,22 @@ export default function Home(rankings) {
       <div>
         <Header image={logo} title="第十一届亚太大专华语辩论公开赛"/>
         <Timelines  />
-        <Rankings ranking={data}/>
+        <Rankings ranking={res}/>
       </div>
     </div>
   )
 }
 export async function getServerSideProps(context) {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}rankings`, {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}schools`, {
       method: 'GET',
       headers: {
           'Content-type': 'application/json'
       }
   })
-  const data = await response.json()
+  const res = await response.json()
   return {
       props: {
-          rankings: data
+          rankings: res
       }
   }
 }

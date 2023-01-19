@@ -40,6 +40,22 @@
     },
     "topic2": {
       "type": "string"
+    },
+    "group": {
+      "type": "enumeration",
+      "enum": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ]
+    },
+    "point": {
+      "type": "integer"
     }
   }
 }

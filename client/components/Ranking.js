@@ -8,45 +8,45 @@ import {
     Td,
     TableCaption,
     TableContainer,
-    Text
+    Text,
+    Heading,
+    Flex
   } from '@chakra-ui/react'
   import "@fontsource/ma-shan-zheng"
+import { useEffect, useState } from 'react';
 
-function Ranking({uni1,p1,uni2,p2,uni3,p3}) {
-
-    return (
-        
-        <TableContainer paddingBottom={10}>
-  <Table variant='simple'>
+function Ranking({ data, group }) {
+  var ranks = 0
+  data.sort((t1, t2) => t2.attributes.point - t1.attributes.point)
+  return (
+      <Flex flexDir={'column'} color={'white'}>
+      <Heading fontFamily={'Ma Shan Zheng'} color={'white'}>{group}组</Heading>
+        <TableContainer paddingBottom={10} w='30vw'>
+  <Table variant="simple">
     <Thead>
-      <Tr>
-        <Th  fontFamily= {'Ma Shan Zheng'} fontSize='3xl' padding={5}>大学</Th>
-        <Th fontFamily= {'Ma Shan Zheng'} fontSize='3xl'padding={5} isNumeric>积分</Th>
+            <Tr>
+        <Th fontFamily= {'Ma Shan Zheng'} fontSize='3xl'padding={5} isNumeric color='white'>排名</Th>
+        <Th  fontFamily= {'Ma Shan Zheng'} fontSize='3xl' padding={5} color='white'>学校</Th>
+        <Th fontFamily= {'Ma Shan Zheng'} fontSize='3xl'padding={5} isNumeric color='white'>积分</Th>
       </Tr>
     </Thead>
-    <Tbody>
-      <Tr>
-        <Td  color='white' >{uni1}</Td>
-        <Td color='white' isNumeric>{p1}</Td>
-      </Tr>
-      <Tr>
-        <Td color='white'>{uni2}</Td>
-
-        <Td color='white' isNumeric>{p2}</Td>
-      </Tr>
-      <Tr>
-        <Td color='white'>{uni3}</Td>
-        <Td color='white' isNumeric>{p3}</Td>
-      </Tr>
+          <Tbody>
+            {data.map((rank) => {
+              if (rank.attributes.group === group) {
+                ranks = ranks + 1
+                return (
+                  <Tr>
+                    <Td  color='white' isNumeric >{ranks}</Td>
+                    <Td  color='white' >{rank.attributes.schoolNameCN}</Td>
+                    <Td color='white' isNumeric>{rank.attributes.point}</Td>
+                    </Tr>
+                  )
+                }
+            })}
     </Tbody>
-    <Tfoot>
-      <Tr>
-        <Th fontFamily= {'Ma Shan Zheng'}fontSize='1xl' >大学</Th>
-        <Th fontFamily= {'Ma Shan Zheng'} fontSize='1xl' isNumeric>积分</Th>
-      </Tr>
-    </Tfoot>
   </Table>
-</TableContainer >
+      </TableContainer >
+      </Flex>
 
       );
 }
