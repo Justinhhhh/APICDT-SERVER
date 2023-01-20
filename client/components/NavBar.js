@@ -83,6 +83,9 @@ function NavBar() {
           <Link href="/results1331" passHref>
                   <Flex ml={5} _hover={{color: 'white'}}>比赛结果</Flex>
                 </Link>
+                <Link href="/schoolCheck" passHref>
+                  <Flex ml={5} _hover={{color: 'white'}}>队伍查询</Flex>
+                </Link>
                 <Link href="/" passHref>
             <Flex ml={5} _hover={{ color: 'white', cursor: 'pointer' }} onClick={handleSignOut}>登出</Flex>
               </Link>

@@ -6,7 +6,9 @@ import group from '../public/group.json'
 
 function Rankings({ ranking }) {
     const { Groups } = group
-    const { data } = ranking
+    const { data} = ranking
+
+   
     return ( 
         <Flex align={'center'} justify={'center'} w="100vw" className={styles.body} flexDir={'column'}>
             <Text align="center" fontSize='6xl' letterSpacing={3} padding={5} fontFamily= {'Ma Shan Zheng'} color={'white'}>积分榜</Text>
