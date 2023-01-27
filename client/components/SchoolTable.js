@@ -52,7 +52,7 @@ function SchoolTable({leaderEmail,drawn_result,schoolNameEN,leaderNameEN,leaderN
         <Td>{schoolNameEN}</Td>
         <Td>{leaderNameEN}</Td>
         <Td>
-        <Select  placeholder={group}>
+        <Select  placeholder={group}> 
             <option value='无'>无</option>
         {Groups.map((value) => {
             if (value != group){

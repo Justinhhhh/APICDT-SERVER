@@ -23,7 +23,7 @@ return (
   <Heading fontFamily={'Ma Shan Zheng'} color={'white'}>{group}组</Heading>
     <TableContainer paddingBottom={10} w='30vw'>
   <Table variant="simple">
-  <Thead>
+    <Thead>
         <Tr>
       <Th fontFamily= {'Ma Shan Zheng'} fontSize='3xl'padding={5} isNumeric color='white'>排名</Th>
       <Th  fontFamily= {'Ma Shan Zheng'} fontSize='3xl' padding={5} color='white'>学校</Th>

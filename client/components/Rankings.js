@@ -2,10 +2,10 @@ import { Box, Flex, Heading ,Text,Container, Grid, GridItem} from '@chakra-ui/re
 import "@fontsource/ma-shan-zheng"
 import Ranking from "./Ranking";
 import styles from '../styles/Timelines.module.css'
-import group from '../public/group.json'
+import group1 from '../public/group.json'
 
 function Rankings({ ranking }) {
-    const { Groups } = group
+    const { Groups } = group1
     const { data} = ranking
 
    
