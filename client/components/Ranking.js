@@ -18,6 +18,7 @@ import { useEffect, useState } from 'react';
 function Ranking({ data, group }) {
   var ranks = 0
   data.sort((t1, t2) => t2.attributes.point - t1.attributes.point)
+  console.log(data)
   return (
       <Flex flexDir={'column'} color={'white'}>
       <Heading fontFamily={'Ma Shan Zheng'} color={'white'}>{group}组</Heading>

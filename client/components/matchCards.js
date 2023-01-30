@@ -2,7 +2,7 @@ import MatchCard from "./matchCard";
 import { Box, Flex, Heading } from '@chakra-ui/react'
 import "@fontsource/ma-shan-zheng"
 
-function MatchCards({ matches,schools}) {
+function MatchCards({ matches, schools }) {
     return ( 
         <Box fontFamily={'Ma Shan Zheng'}>
             <Heading fontFamily={'Ma Shan Zheng'} ml={20} mt={20} fontSize={48}>比赛</Heading>
