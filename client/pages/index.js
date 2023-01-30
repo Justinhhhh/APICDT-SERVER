@@ -58,6 +58,7 @@ export async function getServerSideProps(context) {
       }
   })
   const res = await response.json()
+
   return {
       props: {
           rankings: res
