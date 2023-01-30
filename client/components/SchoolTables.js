@@ -56,7 +56,21 @@ function SchoolTables({ schools }) {
         newArray[index] = e.target.value;
         setGroup(newArray)
         console.log(group)
-      };
+    };
+    data.sort((schoolA, schoolB) => {
+        const groupB = schoolB.attributes.group
+        const groupA = schoolA.attributes.group
+
+        if (groupA < groupB) {
+            return -1
+        }
+        else if (groupA > groupB) {
+            return 1
+        }
+
+        return 0
+    }) 
+    console.log(data)
     return ( 
         <Container maxW='4xl'>
         < Flex mt = { 20} fontFamily = { 'ZCOOL XiaoWei'} align = { 'center'} flexDir = { 'column'} >
@@ -100,7 +114,7 @@ function SchoolTables({ schools }) {
                   <Td>{school.attributes.schoolNameEN}</Td>
                   <Td>{school.attributes.leaderNameEN}</Td>
                   <Td>
-                  <Select  placeholder={school.attributes.group} onChange={updateState(school.id)}> 
+                  <Select placeholder={school.attributes.group} onChange={updateState(school.id)}> 
                       <option value='无'>无</option>
                   {
                   Groups.map((value) => {
