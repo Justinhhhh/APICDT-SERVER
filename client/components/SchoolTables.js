@@ -16,7 +16,7 @@ import {
   } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
-import group1 from '../public/group.json'
+import group1 from '../public/GroupsNew.json'
 import { Row } from 'antd';
 import "@fontsource/zcool-xiaowei"
 function SchoolTables({ schools }) {
@@ -72,13 +72,13 @@ function SchoolTables({ schools }) {
     }) 
     console.log(data)
     return ( 
-        <Container maxW='4xl'>
+       <Container  maxW='700px' >
         < Flex mt = { 20} fontFamily = { 'ZCOOL XiaoWei'} align = { 'center'} flexDir = { 'column'} >
             <Heading fontFamily={'ZCOOL XiaoWei'} fontSize={50} mb={20}>队伍查询</Heading>
                 {data.map(school => {
                 return (
                       //  <Schools key={school.id} leaderEmail={school.attributes.leaderEmail} drawn_result={school.attributes.drawn_result} schoolNameEN={school.attributes.schoolNameEN} leaderNameEN={school.attributes.leaderNameEN} leaderNameCN={school.attributes.leaderNameCN} leaderPhone={school.attributes.leaderPhone} schoolNameCN={school.attributes.schoolNameCN} topic1={school.attributes.topic1} topic2={school.attributes.topic2} group={school.attributes.group} point={school.attributes.point}/>
-                      <TableContainer mb={10} key={school.id}>
+                      <TableContainer mb={10} key={school.id} >
                       <Table variant='striped' colorScheme='gray' layout='2'>
                       <Thead>
                 <Tr>
@@ -115,13 +115,23 @@ function SchoolTables({ schools }) {
                   <Td>{school.attributes.leaderNameEN}</Td>
                   <Td>
                   <Select placeholder={school.attributes.group} onChange={updateState(school.id)}> 
-                      <option value='无'>无</option>
                   {
-                  Groups.map((value) => {
-                      if (value != school.attributes.group){
+                    Groups.map((value) => {
+                    if (value ==="无" && school.attributes.group != null){
+                        return
+                    }
+                    else if (value ==="无" && school.attributes.group === null){
+                        console.log("无")
+                        return(
+                            <option value={value}>{value}</option>
+                          )
+                    }
+                    else if  (value != school.attributes.group){
                       return(
                       <option value={value}>{value}</option>
-                      )}})}
+                    )}})
+                    
+                  }
                   </Select>
                   </Td>
                   <Td>{school.attributes.topic2}</Td>
@@ -138,7 +148,7 @@ function SchoolTables({ schools }) {
     <Button type='submit' colorScheme={'blackAlpha'} iconSpacing='10' onClick={handleSubmit}>确认修改/Modification</Button>
     </Stack>
             </Flex>
-            </Container>
+        </Container>
      );
 }
 
