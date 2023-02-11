@@ -11,7 +11,7 @@ function AdminMatch({matches}) {
     const { data } = matches
     const router = useRouter()
     return ( 
-        <Box fontFamily={'Ma Shan Zheng'}>
+        <Box fontFamily={'Ma Shan Zheng'} mb={20}>
             <Heading fontFamily={'Ma Shan Zheng'} ml={20} mt={20} fontSize={48}>比赛</Heading>
             <Flex align='center' flexDirection='column'>
             <Button onClick={() => router.push('/addMatch')}><Flex flexDir={'row'} align='center' justify={'center'}><AddIcon/><Flex fontSize={'20'} ml={3}>添加比赛</Flex></Flex></Button>
