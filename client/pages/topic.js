@@ -11,7 +11,7 @@ function TopicPage({ topics }) {
 
 export default TopicPage;
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}matches`, {
         method: 'GET',
         headers: {
