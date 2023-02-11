@@ -11,7 +11,7 @@ function AddNews() {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const response = await fetch(`${NEXT_PUBLIC_SERVER_URL}announcements`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}announcements`, {
             method: 'POST',
             body: JSON.stringify({
                 data: {
@@ -24,7 +24,6 @@ function AddNews() {
             }
         })
         const res = await response.json()
-        console.log(res)
         router.push('/userHome')
     }
 

@@ -18,7 +18,7 @@ function Login() {
             redirect: false,
             email: email,
             password: password,
-            callbackUrl: `${NEXT_PUBLIC_CLIENT_URL}`
+            callbackUrl: `${process.env.NEXT_PUBLIC_CLIENT_URL}`
         })
 
         // const getRole = await getRoles()

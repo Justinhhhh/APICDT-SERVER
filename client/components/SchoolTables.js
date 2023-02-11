@@ -27,7 +27,7 @@ function SchoolTables({ schools }) {
     const handleSubmit = async (e) => {
         e.preventDefault()
         for (const s of data ){
-        const response = await fetch(`${NEXT_PUBLIC_SERVER_URL}schools/${s.id}`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}schools/${s.id}`, {
             method: 'PUT',
             headers: {
                 'Content-type': 'application/json'
@@ -68,8 +68,6 @@ function SchoolTables({ schools }) {
     return ( 
        <Container  maxW='700px' >
         < Flex mt = { 20} fontFamily = { 'ZCOOL XiaoWei'} align = { 'center'} flexDir = { 'column'} >
-                {data ?
-                    <Flex>
                     <Heading fontFamily={'ZCOOL XiaoWei'} fontSize={50} mb={20}>队伍查询</Heading>
                 {data.map(school => {
                 return (
@@ -141,7 +139,7 @@ function SchoolTables({ schools }) {
 })}
     <Stack  padding={20}>
     <Button type='submit' colorScheme={'blackAlpha'} iconSpacing='10' onClick={handleSubmit}>确认修改/Modification</Button>
-    </Stack></Flex> : <Box></Box>}
+    </Stack>
             </Flex>
         </Container>
      );

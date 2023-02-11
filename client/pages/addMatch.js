@@ -30,7 +30,7 @@ function AddNews({ schools }) {
             }, 5000)
             return null
         }
-        const response = await fetch(`${NEXT_PUBLIC_SERVER_URL}matches`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}matches`, {
             method: 'POST',
             body: JSON.stringify({
                 data: {
@@ -128,7 +128,7 @@ export async function getServerSideProps(context) {
         }
     }
 
-    const response = await fetch(`${NEXT_PUBLIC_SERVER_URL}schools`)
+    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}schools`)
     const res = await response.json()
 
     return {

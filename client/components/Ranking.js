@@ -23,9 +23,7 @@ function Ranking({ data, group }) {
   }
   return (
     <Flex flexDir={'column'} color={'white'} >
-      {data ? 
-        ( 
-    <Flex><Heading fontFamily={'Ma Shan Zheng'} color={'white'}>{group}组</Heading>
+      <Heading fontFamily={'Ma Shan Zheng'} color={'white'}>{group}组</Heading>
       <TableContainer paddingBottom={10} w='30vw'>
 <Table variant="simple">
   <Thead>
@@ -50,8 +48,7 @@ function Ranking({ data, group }) {
         })}
 </Tbody>
 </Table>
-  </TableContainer ></Flex>) : <Box></Box>}
-      </Flex>
+  </TableContainer ></Flex>
 
     );
 }

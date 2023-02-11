@@ -108,7 +108,7 @@ function GradeTable({ teamA, teamB, judgeName }) {
                 }
             })
         })
-        const responseID = await fetch(`${NEXT_PUBLIC_SERVER_URL}results?filters[teamA][$eq]=${teamA}&filters[teamB][$eq]=${teamB}&filters[judge][$eq]=${judgeName}`, {
+        const responseID = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}results?filters[teamA][$eq]=${teamA}&filters[teamB][$eq]=${teamB}&filters[judge][$eq]=${judgeName}`, {
             method: 'GET',
             headers: {
                 'Content-type': 'application/json'
@@ -117,7 +117,7 @@ function GradeTable({ teamA, teamB, judgeName }) {
         const res = await responseID.json()
         const { data } = res
         const id = data[0].id
-        router.replace(`${NEXT_PUBLIC_CLIENT_URL}/gradeImpression/${id}`)
+        router.replace(`${process.env.NEXT_PUBLIC_CLIENT_URL}/gradeImpression/${id}`)
         // router.replace(`http://localhost:3000/gradeImpression/1`)
         // router.replace(`http://apicdt.vercel.app/gradeImpression/1`)
     }
