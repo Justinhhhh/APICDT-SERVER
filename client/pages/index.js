@@ -28,7 +28,7 @@ export default function Home({ rankings }) {
     }
   }, [session, status])
 
-  if (status === 'loading' && session) {
+  if (status === 'loading') {
     return (
       <Loading/>
     )

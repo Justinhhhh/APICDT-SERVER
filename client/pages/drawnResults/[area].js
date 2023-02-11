@@ -4,6 +4,7 @@ import useSWR from 'swr'
 import { useRouter } from 'next/router'
 import DrawnResultsArea from '../../components/drawnResultsArea'
 import results from '../../public/drawnResults.json'
+import Loading from '../loading'
 
 const fetcher = async () => {
     const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}drawn-results`)
@@ -19,7 +20,7 @@ function Area() {
     // const { data } = results
 
     if (!data) 
-        return <></>
+        return <Loading/>
     
     return ( 
         <DrawnResultsArea data={data} area={area} />

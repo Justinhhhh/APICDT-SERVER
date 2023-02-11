@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 import DrawnResultsArea from '../../components/drawnResultsArea'
 import CountriesName from '../../public/country.json'
 import results from '../../public/drawnResults.json'
+import Loading from '../loading'
 
 const fetcher = async () => {
     const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}drawn-results`)
@@ -18,7 +19,7 @@ function DrawnResults() {
     const { data, error } = useSWR(`drawnResults`, fetcher)
     // const {data} = results
     if (!data) 
-        return <></>
+        return <Loading/>
     
     return (
         <Grid templateColumns={'repeat(2, 1fr)'}>
