@@ -11,7 +11,6 @@ function MatchCards({ matches, schools }) {
                     const date = new Date().getTime()
                     const date1 = new Date(match.attributes.matchTime).getTime()
                     if (match.attributes.teamA===schools && date1 >=date){
-                    console.log("Hello",match.attributes.aTopic)
                 return (
                     <MatchCard key={match.id} aTopic={match.attributes.aTopic} bTopic={match.attributes.bTopic} id={match.id} matchType={match.attributes.matchType} teamA={match.attributes.teamA} teamB={match.attributes.teamB} matchTime={match.attributes.matchTime} />
                 )

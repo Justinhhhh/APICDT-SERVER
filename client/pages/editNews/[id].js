@@ -6,7 +6,6 @@ import { useRouter } from "next/router";
 
 function EditNews({ announcement }) {
     const { data } = announcement
-    console.log(data)
     const [title, setTitle] = useState(data.attributes.title)
     const [description, setDescription] = useState(data.attributes.description)
     const router = useRouter()

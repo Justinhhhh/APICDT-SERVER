@@ -69,9 +69,7 @@ function Starwars({ initialTime }) {
                 }
             })
             const userRes = await userResponse.json()
-            console.log(userRes)
             const schoolName = userRes.data[0].attributes.schoolNameCN
-            console.log(schoolName, area, duration)
             const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}drawn-results`, {
                 method: 'POST',
                 body: JSON.stringify({

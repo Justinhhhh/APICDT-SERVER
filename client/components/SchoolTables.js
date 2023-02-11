@@ -26,8 +26,6 @@ function SchoolTables({ schools }) {
     const [group, setGroup] = useState([]);
     const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log("group")
-        console.log(group)
         for (const s of data ){
         const response = await fetch(`${NEXT_PUBLIC_SERVER_URL}schools/${s.id}`, {
             method: 'PUT',
@@ -44,18 +42,13 @@ function SchoolTables({ schools }) {
             }
         })
         const res = await response.json()
-        console.log(res)
-        console.log(s.id)
     }
     router.push('/userHome')
 }
     const updateState = (index) => (e) => {
-        console.log(group)
         const newArray = group
-        console.log(index)
         newArray[index] = e.target.value;
         setGroup(newArray)
-        console.log(group)
     };
     data.sort((schoolA, schoolB) => {
         const groupB = schoolB.attributes.group
@@ -70,7 +63,6 @@ function SchoolTables({ schools }) {
 
         return 0
     }) 
-    console.log(data)
     return ( 
        <Container  maxW='700px' >
         < Flex mt = { 20} fontFamily = { 'ZCOOL XiaoWei'} align = { 'center'} flexDir = { 'column'} >
@@ -121,7 +113,6 @@ function SchoolTables({ schools }) {
                         return
                     }
                     else if (value ==="无" && school.attributes.group === null){
-                        console.log("无")
                         return(
                             <option key={id} value={value}>{value}</option>
                           )

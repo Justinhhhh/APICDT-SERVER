@@ -7,10 +7,8 @@ import { authOptions } from "./api/auth/[...nextauth]";
 
 function UserHome({announcement}) {
     const { data } = announcement
-    console.log(data)
     return (
         <Announcement announcement={data}></Announcement>
-        // <h1>hi</h1>
      );
 }
 

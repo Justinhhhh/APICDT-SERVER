@@ -9,7 +9,6 @@ import MatchCard from "../components/matchCard";
 
 function AdminMatch({matches}) {
     const { data } = matches
-    console.log(data)
     const router = useRouter()
     return ( 
         <Box fontFamily={'Ma Shan Zheng'}>

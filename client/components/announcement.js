@@ -11,8 +11,9 @@ import Loading from "../pages/loading";
 function Announcement({ announcement }) {
     const [role, setRole] = useState()
     const router = useRouter()
-    announcement.sort((a, b) => b.id - a.id)
-    console.log(announcement)
+    if (announcement) {
+        announcement.sort((a, b) => b.id - a.id)
+    }
     const { data: session, status } = useSession()
     useEffect(() => {
         if (session && status != 'loading') {

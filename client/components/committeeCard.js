@@ -5,7 +5,6 @@ import committee from "../public/committees.json"
 
 function CommitteeCard({ index, name, position }) {
     const { data } = committee
-    console.log(data[index].image)
     return ( 
         <Card maxW='sm' fontFamily={"ZCOOL XiaoWei"} bgColor='#2f0101' boxShadow='lg' mt={10} color="#fafafa">
         <CardBody>

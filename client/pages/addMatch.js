@@ -47,7 +47,6 @@ function AddNews({ schools }) {
             }
         })
         const res = await response.json()
-        console.log(res)
         router.push('adminMatch')
     }
 

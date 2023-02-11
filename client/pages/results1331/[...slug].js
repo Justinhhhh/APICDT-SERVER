@@ -1,4 +1,4 @@
-import { Flex, Heading, Text, Divider } from "@chakra-ui/react";
+import { Flex, Heading, Text, Divider, Box } from "@chakra-ui/react";
 import {
     Table,
     Thead,
@@ -17,9 +17,9 @@ import result from '../../public/results.json'
 function results({ results }) {
     const { data } = results
     // const { data } = result
-    console.log(data)
-    return (
-        data.map(result => {
+  return (
+    <Flex>
+        {data ? data.map(result => {
             return(
             <Flex flexDir={'column'} mb={20} mt={10} ml={20} mr={20} key={result.id} fontFamily={'Ma Shan Zheng'}>
                     <Heading fontFamily={'Ma Shan Zheng'} fontSize={70}>评委：{result.attributes.judge}</Heading>
@@ -130,7 +130,8 @@ function results({ results }) {
       />
                 </Flex>
         )})
-    )
+     : <Box></Box>} 
+    </Flex>)
 }
 
 export default results;

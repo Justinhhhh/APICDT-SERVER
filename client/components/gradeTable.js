@@ -117,7 +117,6 @@ function GradeTable({ teamA, teamB, judgeName }) {
         const res = await responseID.json()
         const { data } = res
         const id = data[0].id
-        console.log(id)
         router.replace(`${NEXT_PUBLIC_CLIENT_URL}/gradeImpression/${id}`)
         // router.replace(`http://localhost:3000/gradeImpression/1`)
         // router.replace(`http://apicdt.vercel.app/gradeImpression/1`)
