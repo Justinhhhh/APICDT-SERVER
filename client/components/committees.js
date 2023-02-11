@@ -3,10 +3,10 @@ import { Grid } from '@chakra-ui/react'
 
 function Committees({ committees }) {
     return (
-        <Grid templateColumns='repeat(3, 1fr)' ml={6}>
+        <Grid templateColumns='repeat(5, 1fr)' gap={6}>
             {committees.map(committee => {
             return (
-                <CommitteeCard key={committee.id} name={committee.attributes.name} description={committee.attributes.description}/>
+                <CommitteeCard key={committee.id} index={committee.id} name={committee.name} position={committee.position}/>
             )
         })}
         </Grid>
