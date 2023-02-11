@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "schools",
+  "info": {
+    "singularName": "school",
+    "pluralName": "schools",
+    "displayName": "school",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "schoolNameEN": {
+      "type": "string"
+    },
+    "leaderNameEN": {
+      "type": "string"
+    },
+    "leaderEmail": {
+      "type": "email"
+    },
+    "drawn_result": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::drawn-result.drawn-result"
+    },
+    "leaderNameCN": {
+      "type": "string"
+    },
+    "leaderPhone": {
+      "type": "biginteger"
+    },
+    "schoolNameCN": {
+      "type": "string"
+    },
+    "topic1": {
+      "type": "string"
+    },
+    "topic2": {
+      "type": "string"
+    },
+    "group": {
+      "type": "enumeration",
+      "enum": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ]
+    },
+    "point": {
+      "type": "integer"
+    }
+  }
+}
