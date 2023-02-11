@@ -44,40 +44,40 @@ export const authOptions = {
     session: {
         strategy: 'jwt'
     },
-    // callbacks: {
-    //     // async signIn({ user, account, profile, email, credentials }) {
-    //     //     if (profile) {
-    //     //         return {
-    //     //             ...user,
-    //     //             id: profile.user.id,
-    //     //             jwt: profile.jwt
-    //     //         }
-    //     //     }
-    //     //     return profile
-    //     // },
+    callbacks: {
+        // async signIn({ user, account, profile, email, credentials }) {
+        //     if (profile) {
+        //         return {
+        //             ...user,
+        //             id: profile.user.id,
+        //             jwt: profile.jwt
+        //         }
+        //     }
+        //     return profile
+        // },
 
-    //     async jwt({ token, user, account, profile }) {
-    //         if (user) {
-    //             token.id = user.id
-    //             token.name = user.username
-    //             token.role = user.userRole
-    //             token.school = user.school
-    //         }
+        async jwt({ token, user, account, profile }) {
+            if (user) {
+                token.id = user.id
+                token.name = user.username
+                token.role = user.userRole
+                token.school = user.school
+            }
       
-    //         return token;
-    //       },
+            return token;
+          },
       
-    //       async session({ session, token }) {
-    //           if (token) {
-    //               session.id = token.id
-    //               session.user.name = token.name
-    //               session.user.role = token.role
-    //               session.user.school = token.school
-    //         }
+          async session({ session, token }) {
+              if (token) {
+                  session.id = token.id
+                  session.user.name = token.name
+                  session.user.role = token.role
+                  session.user.school = token.school
+            }
       
-    //         return session;
-    //       },
-    //     }
+            return session;
+          },
+        }
 }
 
 // export const authOptions = {

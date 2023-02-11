@@ -68,6 +68,7 @@ function Starwars({ initialTime }) {
                     'Content-type': 'application/json'
                 }
             })
+            console.log(email)
             const userRes = await userResponse.json()
             const schoolName = userRes.data[0].attributes.schoolNameCN
             const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}drawn-results`, {
