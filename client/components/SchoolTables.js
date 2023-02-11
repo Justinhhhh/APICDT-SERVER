@@ -68,7 +68,9 @@ function SchoolTables({ schools }) {
     return ( 
        <Container  maxW='700px' >
         < Flex mt = { 20} fontFamily = { 'ZCOOL XiaoWei'} align = { 'center'} flexDir = { 'column'} >
-            <Heading fontFamily={'ZCOOL XiaoWei'} fontSize={50} mb={20}>队伍查询</Heading>
+                {data ?
+                    <Flex>
+                    <Heading fontFamily={'ZCOOL XiaoWei'} fontSize={50} mb={20}>队伍查询</Heading>
                 {data.map(school => {
                 return (
                       //  <Schools key={school.id} leaderEmail={school.attributes.leaderEmail} drawn_result={school.attributes.drawn_result} schoolNameEN={school.attributes.schoolNameEN} leaderNameEN={school.attributes.leaderNameEN} leaderNameCN={school.attributes.leaderNameCN} leaderPhone={school.attributes.leaderPhone} schoolNameCN={school.attributes.schoolNameCN} topic1={school.attributes.topic1} topic2={school.attributes.topic2} group={school.attributes.group} point={school.attributes.point}/>
@@ -139,7 +141,7 @@ function SchoolTables({ schools }) {
 })}
     <Stack  padding={20}>
     <Button type='submit' colorScheme={'blackAlpha'} iconSpacing='10' onClick={handleSubmit}>确认修改/Modification</Button>
-    </Stack>
+    </Stack></Flex> : <Box></Box>}
             </Flex>
         </Container>
      );
