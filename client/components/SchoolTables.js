@@ -29,7 +29,7 @@ function SchoolTables({ schools }) {
         console.log("group")
         console.log(group)
         for (const s of data ){
-        const response = await fetch(`http://localhost:1337/api/schools/${s.id}`, {
+        const response = await fetch(`${NEXT_PUBLIC_SERVER_URL}schools/${s.id}`, {
             method: 'PUT',
             headers: {
                 'Content-type': 'application/json'

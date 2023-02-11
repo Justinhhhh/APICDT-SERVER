@@ -11,7 +11,7 @@ function AddNews() {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const response = await fetch(`http://localhost:1337/api/announcements`, {
+        const response = await fetch(`${NEXT_PUBLIC_SERVER_URL}announcements`, {
             method: 'POST',
             body: JSON.stringify({
                 data: {

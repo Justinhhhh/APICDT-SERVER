@@ -137,7 +137,7 @@ export default results;
 
 export async function getServerSideProps(context) {
     const { slug } = context.params
-    const response = await fetch(`http://localhost:1337/api/results?filters[teamA][$eq]=${slug[0]}&filters[teamB][$eq]=${slug[1]}`, {
+    const response = await fetch(`${NEXT_PUBLIC_SERVER_URL}results?filters[teamA][$eq]=${slug[0]}&filters[teamB][$eq]=${slug[1]}`, {
         method: 'GET',
         headers: {
             'Content-type': 'application/json'

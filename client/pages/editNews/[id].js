@@ -13,7 +13,7 @@ function EditNews({ announcement }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const response = await fetch(`http://localhost:1337/api/announcements/${data.id}`, {
+        const response = await fetch(`${NEXT_PUBLIC_SERVER_URL}announcements/${data.id}`, {
             method: 'PUT',
             body: JSON.stringify({
                 data: {
@@ -66,7 +66,7 @@ export async function getServerSideProps(context) {
 
     const { id } = context.params
 
-    const response = await fetch(`http://localhost:1337/api/announcements/${id}`)
+    const response = await fetch(`${NEXT_PUBLIC_SERVER_URL}announcements/${id}`)
     const res = await response.json()
 
     return {

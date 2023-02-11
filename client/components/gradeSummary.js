@@ -40,7 +40,7 @@ function GradeSummary({ resultsID }) {
     const handleSubmit = async (e) => {
         e.preventDefault()
         setShowSuccessAlert(true)
-        const response = await fetch(`http://localhost:1337/api/results/${resultsID}`, {
+        const response = await fetch(`${NEXT_PUBLIC_SERVER_URL}results/${resultsID}`, {
             method: 'PUT',
             headers: {
                 'Content-type': 'application/json'

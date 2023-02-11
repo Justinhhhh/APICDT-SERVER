@@ -21,7 +21,7 @@ function EditNews({ match, schoolS }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const response = await fetch(`http://localhost:1337/api/matches/${data.id}`, {
+        const response = await fetch(`${NEXT_PUBLIC_SERVER_URL}matches/${data.id}`, {
             method: 'PUT',
             body: JSON.stringify({
                 data: {
@@ -120,10 +120,10 @@ export async function getServerSideProps(context) {
 
     const { id } = context.params
 
-    const response = await fetch(`http://localhost:1337/api/matches/${id}`)
+    const response = await fetch(`${NEXT_PUBLIC_SERVER_URL}matches/${id}`)
     const res = await response.json()
 
-    const schoolResponse = await fetch(`http://localhost:1337/api/schools`)
+    const schoolResponse = await fetch(`${NEXT_PUBLIC_SERVER_URL}schools`)
     const schoolRes = await schoolResponse.json()
 
     return {

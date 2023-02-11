@@ -52,7 +52,7 @@ function MatchCard({ aTopic, bTopic, id, matchType, teamA, teamB, matchTime }) {
             }}><EditIcon />
             </Button>
             <Button onClick={async () => {
-        const response = await fetch(`http://localhost:1337/api/matches/${id}`, {
+        const response = await fetch(`${NEXT_PUBLIC_SERVER_URL}matches/${id}`, {
             method: 'DELETE'
         })
         router.reload()

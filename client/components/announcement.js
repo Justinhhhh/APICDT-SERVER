@@ -54,7 +54,7 @@ function Announcement({ announcement }) {
                                     }}><EditIcon />
                                     </Button>
                                     <Button onClick={async () => {
-                                const response = await fetch(`http://localhost:1337/api/announcements/${ann.id}`, {
+                                const response = await fetch(`${NEXT_PUBLIC_SERVER_URL}announcements/${ann.id}`, {
                                     method: 'DELETE'
                                 })
                                 router.reload()

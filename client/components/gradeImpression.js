@@ -40,8 +40,8 @@ function GradeImpression({ resultsID }) {
     const handleSubmit = async (e) => {
         e.preventDefault()
         // router.replace(`http://apicdt.vercel.app/gradeBestCand/1`)
-        router.replace(`http://localhost:3000/gradeBestCand/${resultsID}`)
-        const response = await fetch(`http://localhost:1337/api/results/${resultsID}`, {
+        router.replace(`${NEXT_PUBLIC_CLIENT_URL}/gradeBestCand/${resultsID}`)
+        const response = await fetch(`${NEXT_PUBLIC_SERVER_URL}results/${resultsID}`, {
             method: 'PUT',
             headers: {
                 'Content-type': 'application/json'

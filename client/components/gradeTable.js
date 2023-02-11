@@ -61,7 +61,7 @@ function GradeTable({ teamA, teamB, judgeName }) {
     
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const response = await fetch(`http://localhost:1337/api/results`, {
+        const response = await fetch(`${NEXT_PUBLIC_SERVER_URL}results`, {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'
@@ -108,7 +108,7 @@ function GradeTable({ teamA, teamB, judgeName }) {
                 }
             })
         })
-        const responseID = await fetch(`http://localhost:1337/api/results?filters[teamA][$eq]=${teamA}&filters[teamB][$eq]=${teamB}&filters[judge][$eq]=${judgeName}`, {
+        const responseID = await fetch(`${NEXT_PUBLIC_SERVER_URL}results?filters[teamA][$eq]=${teamA}&filters[teamB][$eq]=${teamB}&filters[judge][$eq]=${judgeName}`, {
             method: 'GET',
             headers: {
                 'Content-type': 'application/json'
@@ -118,7 +118,7 @@ function GradeTable({ teamA, teamB, judgeName }) {
         const { data } = res
         const id = data[0].id
         console.log(id)
-        router.replace(`http://localhost:3000/gradeImpression/${id}`)
+        router.replace(`${NEXT_PUBLIC_CLIENT_URL}/gradeImpression/${id}`)
         // router.replace(`http://localhost:3000/gradeImpression/1`)
         // router.replace(`http://apicdt.vercel.app/gradeImpression/1`)
     }

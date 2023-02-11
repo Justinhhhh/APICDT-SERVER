@@ -23,7 +23,7 @@ function NavBar() {
   const handleSignOut = async (e) => {
     e.preventDefault()
     console.log('hi')
-    const data = await signOut({ redirect: true, callbackUrl: `http://localhost:3000` })
+    const data = await signOut({ redirect: true, callbackUrl: `${NEXT_PUBLIC_CLIENT_URL}` })
     setRole("")
     if (data) {
       router.push(data.url)

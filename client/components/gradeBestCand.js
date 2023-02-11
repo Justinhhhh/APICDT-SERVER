@@ -11,7 +11,7 @@ function GradeBestCand({ resultsID }) {
 
     const handleSubmit = async(e) => {
         e.preventDefault()
-        const response = await fetch(`http://localhost:1337/api/results/${resultsID}`, {
+        const response = await fetch(`${NEXT_PUBLIC_SERVER_URL}results/${resultsID}`, {
             method: 'PUT',
             headers: {
                 'Content-type': 'application/json'
@@ -22,7 +22,7 @@ function GradeBestCand({ resultsID }) {
                 }
             })
         })
-        router.replace(`http://localhost:3000/gradeSummary/${resultsID}`)
+        router.replace(`${NEXT_PUBLIC_CLIENT_URL}/gradeSummary/${resultsID}`)
         // router.replace(`http://apicdt.vercel.app/gradeSummary/1`)
     }
 
