@@ -37,7 +37,7 @@ function Announcement({ announcement }) {
                     //     const time = new Date(ann.attributes.publishedAt).toLocaleTimeString()
                     // }, [])
                     return (
-                        <Flex justify='center' align='center'>
+                        <Flex justify='center' align='center' key={ann.id}>
                         <Card  align='center'  boxShadow='xl' width='80%' mt={10} mr={10} mb={30} className={styles.announcement} key={ann.id}>
                         <CardBody >
                         <Heading  fontFamily={'Ma Shan Zheng'} as='h3' size='lg' color='#dedede' align='center'>{`${ann.attributes.title} `}</Heading>

@@ -36,7 +36,7 @@ function Ranking({ data, group }) {
             if (rank.attributes.group === group) {
               ranks = ranks + 1
               return (
-                <Tr>
+                <Tr key={rank.id}>
                   <Td  color='white' isNumeric >{ranks}</Td>
                   <Td  color='white' >{rank.attributes.schoolNameCN}</Td>
                   <Td color='white' isNumeric>{rank.attributes.point}</Td>

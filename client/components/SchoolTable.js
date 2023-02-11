@@ -57,7 +57,7 @@ function SchoolTable({leaderEmail,drawn_result,schoolNameEN,leaderNameEN,leaderN
         {Groups.map((value) => {
             if (value != group){
             return(
-            <option value={value}>{value}</option>
+              <option key={id} value={value}>{value}</option>
             )}})}
         </Select>
         </Td>

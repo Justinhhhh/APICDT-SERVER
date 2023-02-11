@@ -123,12 +123,12 @@ function SchoolTables({ schools }) {
                     else if (value ==="无" && school.attributes.group === null){
                         console.log("无")
                         return(
-                            <option value={value}>{value}</option>
+                            <option key={id} value={value}>{value}</option>
                           )
                     }
                     else if  (value != school.attributes.group){
                       return(
-                      <option value={value}>{value}</option>
+                      <option key={id} value={value}>{value}</option>
                     )}})
                     
                   }

@@ -24,7 +24,7 @@ function Topic({ topics }) {
             <Text mb={30} fontSize={48} >辩题列表</Text>
             {matchTypes.map((matchType) => {
                 return (
-                <TableContainer width={'60vw'} borderColor='purple' mb={'10'}>
+                <TableContainer width={'60vw'} borderColor='purple' mb={'10'} key={matchType.id}>
                 <Table variant='striped' colorScheme='whiteAlpha' borderColor={'black'}>
                     <Thead>
                     <Tr>
