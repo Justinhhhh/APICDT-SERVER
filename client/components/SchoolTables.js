@@ -50,19 +50,21 @@ function SchoolTables({ schools }) {
         newArray[index] = e.target.value;
         setGroup(newArray)
     };
-    data.sort((schoolA, schoolB) => {
-        const groupB = schoolB.attributes.group
-        const groupA = schoolA.attributes.group
+    if (data) {
+        data.sort((schoolA, schoolB) => {
+            const groupB = schoolB.attributes.group
+            const groupA = schoolA.attributes.group
 
-        if (groupA < groupB) {
-            return -1
-        }
-        else if (groupA > groupB) {
-            return 1
-        }
+            if (groupA < groupB) {
+                return -1
+            }
+            else if (groupA > groupB) {
+                return 1
+            }
 
-        return 0
-    }) 
+            return 0
+        })
+    }
     return ( 
        <Container  maxW='700px' >
         < Flex mt = { 20} fontFamily = { 'ZCOOL XiaoWei'} align = { 'center'} flexDir = { 'column'} >
