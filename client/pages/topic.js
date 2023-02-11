@@ -4,6 +4,7 @@ import Topic from "../components/topic";
 function TopicPage({ topics }) {
     const { data } = topics
     // const { data } = topic
+    console.log(data)
     return (
         <Topic topics={data}></Topic>
     );

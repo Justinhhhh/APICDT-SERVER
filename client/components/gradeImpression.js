@@ -40,7 +40,7 @@ function GradeImpression({ resultsID }) {
     const handleSubmit = async (e) => {
         e.preventDefault()
         // router.replace(`http://apicdt.vercel.app/gradeBestCand/1`)
-        router.replace(`${process.env._CLIENT_URL}/gradeBestCand/${resultsID}`)
+        router.replace(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/gradeBestCand/${resultsID}`)
         const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}results/${resultsID}`, {
             method: 'PUT',
             headers: {

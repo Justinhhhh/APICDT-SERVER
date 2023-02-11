@@ -22,7 +22,7 @@ function NavBar() {
 
   const handleSignOut = async (e) => {
     e.preventDefault()
-    const data = await signOut({ redirect: true, callbackUrl: `${process.env.NEXT_PUBLIC_CLIENT_URL}` })
+    const data = await signOut({ redirect: true, callbackUrl: `${process.env.NEXT_PUBLIC_NEXTAUTH_URL}` })
     setRole("")
     if (data) {
       router.push(data.url)

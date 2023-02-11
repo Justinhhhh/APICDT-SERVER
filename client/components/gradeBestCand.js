@@ -22,7 +22,7 @@ function GradeBestCand({ resultsID }) {
                 }
             })
         })
-        router.replace(`${process.env.NEXT_PUBLIC_CLIENT_URL}/gradeSummary/${resultsID}`)
+        router.replace(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/gradeSummary/${resultsID}`)
         // router.replace(`http://apicdt.vercel.app/gradeSummary/1`)
     }
 
