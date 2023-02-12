@@ -12,7 +12,7 @@ function LoginPage() {
         <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-        <Flex h="92vh" justify='center' align={'center'} className={styles.body}>
+        <Flex justify='center' align={'center'} className={styles.body} pb={10}>
             <Login />
             </Flex>
             </>

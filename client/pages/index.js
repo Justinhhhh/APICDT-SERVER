@@ -13,7 +13,6 @@ export default function Home({ rankings }) {
   const res = rankings
   const { data: session, status } = useSession()
   const router = useRouter()
-  console.log(session, status)
   useEffect(() => {
     if (status != 'loading' && session) {
       if (session.user.role === 'Committee') {
