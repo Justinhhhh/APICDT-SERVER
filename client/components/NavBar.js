@@ -81,7 +81,7 @@ function NavBar() {
                 <Link href="/adminMatch" passHref>
                   <Flex ml={5} _hover={{color: 'white'}}>比赛</Flex>
                 </Link>
-          <Link href="/results1331" passHref>
+          <Link href="/results" passHref>
                   <Flex ml={5} _hover={{color: 'white'}}>比赛结果</Flex>
                 </Link>
                 <Link href="/schoolCheck" passHref>
