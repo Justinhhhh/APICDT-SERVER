@@ -3,6 +3,7 @@ import { useState } from "react";
 import { unstable_getServerSession } from "next-auth";
 import { authOptions } from "./api/auth/[...nextauth]";
 import { useRouter } from "next/router";
+import Head from 'next/head'
 
 function AddNews() {
     const [title, setTitle] = useState("")
