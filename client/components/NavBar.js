@@ -29,6 +29,8 @@ function NavBar() {
     }
   }
 
+  console.log(session)
+
   return (
     <Flex bgColor='#2f0101' color='whiteAlpha.700' justify='space-between' h={'8vh'} alignItems='center' fontFamily={'ZCOOL QingKe HuangYou'} fontSize={18} letterSpacing='0.42em' fontWeight={400}>
       <Flex pl={5} fontSize='24px' align='center'>

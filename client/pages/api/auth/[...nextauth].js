@@ -28,13 +28,7 @@ export const authOptions = {
                 const user = { ...data.user, jwt: data.jwt}
                 console.log("######")
                 console.log(data)
-                // console.log(user)
-
-                if (data.error) {
-                    console.log(data.error)
-                    return null
-                }
-
+                console.log(user)
                 if (user) {
                     return user
                 }
