@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "drawn_results",
+  "info": {
+    "singularName": "drawn-result",
+    "pluralName": "drawn-results",
+    "displayName": "drawn-result",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "schoolName": {
+      "type": "string"
+    },
+    "timeUsed": {
+      "type": "float"
+    },
+    "area": {
+      "type": "string"
+    }
+  }
+}
